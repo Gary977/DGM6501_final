@@ -19,31 +19,35 @@
             </button>
         </div>
     </div>
-    <nav id="hamburger" class="hamburger">
-        <ul class="primary-menu">
-            <li><a href="#home">Homepage</a></li>
-            <li><a href="#customer-support">Customer Support</a>
-                <ul>
-                    <li><a href="#contact-us">Contact Us</a></li>
-                    <li><a href="#terms">Terms & Condition</a></li>
-                    <li><a href="#faq">Help & FAQ</a></li>
+    <!-- 主导航菜单 -->
+    <nav class="primary-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="books.html">Books</a>
+                <!-- Books 的下拉菜单 -->
+                <ul class="dropdown-menu">
+                    <li><a href="fiction.html">Fiction</a></li>
+                    <li><a href="non-fiction.html">Non-fiction</a></li>
+                    <li><a href="mystery.html">Mystery</a></li>
                 </ul>
             </li>
-            <div class="user-dashboard" id="userDashboard">
-                <div class="user-info" id="userInfo">
-                    <img src="" alt="User Avatar" id="userAvatar">
-                    <span id="userName">Log In</span>
-                    <span class="dropdown-arrow" id="dropdownArrow">▼</span>
-                </div>
-
-                <!-- 下拉菜单，默认隐藏 -->
-                <ul class="dropdown-menu" id="userMenu">
-                    <li><a href="#profile">Profile</a></li>
-                    <li><a href="#my-books">My Books</a></li>
-                    <li><a href="#notifications">Notifications</a></li>
-                    <li><a href="#wishlist">Wishlist</a></li>
-                    <li id="logoutOption">Log Out</li>
-                </ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+
+    <!-- 用户信息和下拉菜单 -->
+    <div id="userDashboard" class="user-dashboard">
+        <div class="user-info">
+            <img src="path/to/avatar.png" alt="User Avatar" id="userAvatar">
+            <span id="userName">Username</span>
+            <span class="dropdown-arrow">▼</span>
+        </div>
+        <!-- 用户的下拉菜单，结构与主导航下拉菜单保持一致 -->
+        <ul class="dropdown-menu">
+            <li><a href="profile.html">Profile</a></li>
+            <li><a id="logoutOption" href="#">Log Out</a></li>
+        </ul>
+    </div>
+
 </header>

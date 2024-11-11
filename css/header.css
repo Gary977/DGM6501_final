@@ -71,75 +71,62 @@ header {
     filter: brightness(0) invert(1);
 }
 
-/* Primary Navigation Menu */
-.primary-menu {
+/* 主导航和下拉菜单的通用样式 */
+.primary-menu, .dropdown-menu {
     list-style: none;
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1.2rem;
-
+    padding: 0;
+    margin: 0;
 }
 
-.primary-menu li {
+.primary-menu > ul > li {
+    display: inline-block;
     position: relative;
 }
 
-.primary-menu li a {
+.primary-menu a {
     text-decoration: none;
-    color: #333333; /* Dark gray for primary menu links */
-    padding: 1.2rem;
-    font-size: 1.2rem;
-    font-family: 'Roboto', sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    white-space: nowrap;
-}
-
-.primary-menu li a:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* Light gray hover effect */
-    border-radius: 0.25rem;
-}
-
-/* Dropdown Menu Styling */
-.primary-menu li ul {
-    display: none;
-    position: absolute;
-    top: calc(100% + 1rem); /* Add spacing below the parent menu item */
-    left: 0;
-    background-color: #ffffff; /* White background for dropdown menu */
-    padding: 1rem;
-    list-style: none;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
-    border-radius: 0.5rem;
-    min-width: 10rem;
-}
-
-.primary-menu li:hover ul {
+    color: #333;
+    padding: 0.625rem 0.9375rem; /* 等于 10px 15px */
     display: block;
-    z-index: 1;
-}
-
-.primary-menu li ul:hover {
-    display: block;
-}
-
-.primary-menu li ul li a {
-    display: block;
-    padding: 0.5rem;
-    color: #333333; /* Dark gray for dropdown links */
     transition: background-color 0.3s ease;
 }
 
-.primary-menu li ul li a:hover {
-    background-color: #f0f0f0; /* Light gray hover effect for dropdown */
-    border-radius: 0.25rem;
+.primary-menu a:hover {
+    background-color: #f0f0f0;
+    border-radius: 0.25rem; /* 等于 4px */
 }
 
+/* Dropdown Menu 样式 */
+.dropdown-menu {
+    display: none; /* 默认隐藏 */
+    position: absolute;
+    top: calc(100% + 0.3125rem); /* 等于 5px */
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* 等于 4px 8px */
+    border-radius: 0.5rem; /* 等于 8px */
+    z-index: 1000;
+    padding: 0;
+    min-width: 9.375rem; /* 等于 150px */
+}
+
+.dropdown-menu li {
+    display: block; /* 下拉菜单项为块级元素 */
+}
+
+/* Hover 状态显示下拉菜单 */
+.primary-menu > ul > li:hover .dropdown-menu,
+.user-dashboard:hover .dropdown-menu {
+    display: block;
+}
+
+/* User Dashboard 样式 */
 .user-dashboard {
     display: flex;
     align-items: center;
     position: relative;
-    margin-left: auto;
     cursor: pointer;
+    margin-left: auto;
 }
 
 .user-info {
@@ -148,10 +135,10 @@ header {
 }
 
 #userAvatar {
-    width: 32px;
-    height: 32px;
+    width: 2rem; /* 等于 32px */
+    height: 2rem; /* 等于 32px */
     border-radius: 50%;
-    margin-right: 8px;
+    margin-right: 0.5rem; /* 等于 8px */
 }
 
 #userName {
@@ -160,36 +147,6 @@ header {
 }
 
 .dropdown-arrow {
-    margin-left: 4px;
+    margin-left: 0.25rem; /* 等于 4px */
     font-size: 0.8rem;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    list-style: none;
-    padding: 0.5rem 0;
-    margin: 0;
-    z-index: 1000;
-    min-width: 150px;
-}
-
-.dropdown-menu li {
-    padding: 0.5rem 1rem;
-}
-
-.dropdown-menu li a {
-    text-decoration: none;
-    color: #333;
-    display: block;
-}
-
-.dropdown-menu li a:hover {
-    background-color: #f0f0f0;
-    border-radius: 4px;
 }

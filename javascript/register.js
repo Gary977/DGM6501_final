@@ -12,10 +12,11 @@ function registerUser(event) {
         return;
     }
 
-    if(!password === confirm){
+    if(password !== confirm){
         alert('Please ensure the confirm password is correct.')
         return;
     }
+
     const userData = {
         email: email,
         password: password,
