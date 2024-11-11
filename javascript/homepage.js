@@ -1,6 +1,10 @@
 //for slider
 let currentIndex = 0;
 let booksPerPage = 5;
+// log in state
+let isLoggedIn = false;
+//json data
+let books = [];
 //for bookModal
 const bookModal = document.getElementById('bookModal');
 const bookModalContent = document.querySelector('.book-modal-content');
@@ -12,8 +16,6 @@ const modalBookDescription = document.getElementById('modalBookDescription');
 const closeButton = document.querySelector('.close-button');
 let bookItemRect = null;
 
-// log in state
-let isLoggedIn = false; // 更改为 true 时显示用户名
 
 //for userinfo
 const userDashboard = document.getElementById('userDashboard');
@@ -21,89 +23,90 @@ const userName = document.getElementById('userName');
 const userAvatar = document.getElementById('userAvatar');
 const userMenu = document.getElementById('userMenu');
 
-//json data
-const books = [
-    {
-        "title": "Pride and Prejudice",
-        "author": "Jane Austen",
-        "rating": "4.5",
-        "image": "pictures/book1.jpg",
-        "addedDate": "2024-11-01T08:30:00Z",
-        "description": "A classic novel of manners that explores issues of class, marriage, and morality."
-    },
-    {
-        "title": "1984",
-        "author": "George Orwell",
-        "rating": "4.8",
-        "image": "pictures/book2.jpg",
-        "addedDate": "2024-11-02T09:00:00Z",
-        "description": "A classic novel of manners that explores issues of class, marriage, and morality."
-    },
-    {
-        "title": "To Kill a Mockingbird",
-        "author": "Harper Lee",
-        "rating": "4.6",
-        "image": "pictures/book3.jpg",
-        "addedDate": "2024-11-03T10:15:00Z",
-        "description": "A classic novel of manners that explores issues of class, marriage, and morality."
-    },
-    {
-        "title": "The Great Gatsby",
-        "author": "F. Scott Fitzgerald",
-        "rating": "4.4",
-        "image": "pictures/book4.jpg",
-        "addedDate": "2024-11-04T11:45:00Z",
-        "description": "A classic novel of manners that explores issues of class, marriage, and morality."
-    },
-    {
-        "title": "Moby-Dick",
-        "author": "Herman Melville",
-        "rating": "4.3",
-        "image": "pictures/book5.jpg",
-        "addedDate": "2024-11-05T12:30:00Z",
-        "description": "A classic novel of manners that explores issues of class, marriage, and morality."
-    },
-    {
-        "title": "The Odyssey",
-        "author": "Homer",
-        "rating": "4.7",
-        "image": "pictures/book6.jpg",
-        "addedDate": "2024-11-06T13:00:00Z",
-        "description": "The Odyssey is one of two major ancient Greek epic poems attributed to Homer. It is one of the oldest works of literature still widely read by modern audiences. Like the Iliad, the Odyssey is divided into 24 books. It follows the Greek hero Odysseus, king of Ithaca, and his journey home after the Trojan War. After the war, which lasted ten years, his journey from Troy to Ithaca, via Africa and southern Europe, lasted for ten additional years during which time he encountered many perils and all of his crewmates were killed."
-    },
-    {
-        "title": "War and Peace",
-        "author": "Leo Tolstoy",
-        "rating": "4.8",
-        "image": "pictures/book7.jpg",
-        "addedDate": "2024-11-07T14:20:00Z",
-        "description": "A classic novel of manners that explores issues of class, marriage, and morality."
-    },
-    {
-        "title": "Crime and Punishment",
-        "author": "Fyodor Dostoevsky",
-        "rating": "4.7",
-        "image": "pictures/book8.jpg",
-        "addedDate": "2024-11-08T15:00:00Z",
-        "description": "A classic novel of manners that explores issues of class, marriage, and morality."
-    },
-    {
-        "title": "The Catcher in the Rye",
-        "author": "J.D. Salinger",
-        "rating": "4.2",
-        "image": "pictures/book9.jpg",
-        "addedDate": "2024-11-09T16:30:00Z",
-        "description": "A classic novel of manners that explores issues of class, marriage, and morality."
-    },
-    {
-        "title": "The Brothers Karamazov",
-        "author": "Fyodor Dostoevsky",
-        "rating": "4.6",
-        "image": "pictures/book10.jpg",
-        "addedDate": "2024-11-10T17:45:00Z",
-        "description": "A classic novel of manners that explores issues of class, marriage, and morality."
+initialize();
+
+
+async function initialize() {
+    try {
+        const response = await fetch('../json/books.json');
+        if (!response.ok) throw new Error('Network response was not ok');
+
+        books = await response.json();
+        console.log(books); // 调试信息：检查 books 是否正确加载
+        showPopularBooks();
+        updateUserInfo();
+        window.addEventListener("resize", updateBooksPerPage);
+
+        //book toggle
+        document.getElementById('book-toggle').addEventListener('click', function () {
+            const button = document.getElementById('book-toggle');
+            const title = document.getElementById('title');
+
+            if (button.textContent === "Show Popular Books") {
+                showPopularBooks();
+                title.textContent = "Popular Books";
+                title.setAttribute('data-text', "Popular Books");
+                button.textContent = 'Show New Additions';
+            } else {
+                showNewAdditions();
+                title.textContent = "New Additions";
+                title.setAttribute('data-text', "New Additions");
+
+                button.textContent = 'Show Popular Books';
+            }
+        });
+
+        //log in
+        userDashboard.addEventListener('click', () => {
+            if (isLoggedIn) {
+                userMenu.style.display = userMenu.style.display === 'block' ? 'none' : 'block';
+            } else {
+                isLoggedIn = true;
+            }
+        });
+
+        //user menu exit
+        window.addEventListener('click', (event) => {
+            if (!userDashboard.contains(event.target)) {
+                userMenu.style.display = 'none';
+            }
+        });
+
+        //book modal exit
+        closeButton.addEventListener('click', function () {
+            if (bookItemRect) {
+                zoom();
+            }
+
+            bookModalContent.classList.remove('show');
+            bookModal.classList.remove('show');
+
+            setTimeout(() => {
+                bookModalContent.style.transformOrigin = "center center";
+            }, 400);
+        });
+
+        window.addEventListener('click', function (event) {
+            if (event.target === bookModal) {
+                if (bookItemRect) {
+                    zoom();
+                }
+
+                bookModalContent.classList.remove('show');
+                bookModal.classList.remove('show');
+
+                setTimeout(() => {
+                    bookModalContent.style.transformOrigin = "center center";
+                }, 400);
+            }
+        });
+
+
+
+    } catch (error) {
+        console.error('Failed to load books:', error);
     }
-]
+}
 
 function updateUserInfo() {
     if (isLoggedIn) {
@@ -112,82 +115,16 @@ function updateUserInfo() {
         userDashboard.classList.add('logged-in');
     } else {
         userName.textContent = "Log In";
-        userAvatar.src = "path/to/default-avatar.png"; // 默认头像
+        userAvatar.src = "pictures/test.jpg"; // 默认头像
         userDashboard.classList.remove('logged-in');
     }
 }
 
-userDashboard.addEventListener('click', () => {
-    if (isLoggedIn) {
-        // 切换下拉菜单的显示状态
-        userMenu.style.display = userMenu.style.display === 'block' ? 'none' : 'block';
-    } else {
-        // 未登录时点击跳转到登录页面
-        isLoggedIn = true;
-    }
-});
-
-// 在页面加载时设置用户信息
-updateUserInfo();
-
-// 点击页面其他区域时关闭下拉菜单
-window.addEventListener('click', (event) => {
-    if (!userDashboard.contains(event.target)) {
-        userMenu.style.display = 'none';
-    }
-});
-
-//book modal exit
-closeButton.addEventListener('click', function () {
-    if (bookItemRect) {
-         zoom();
-    }
-
-    bookModalContent.classList.remove('show');
-    bookModal.classList.remove('show');
-
-    setTimeout(() => {
-        bookModalContent.style.transformOrigin = "center center";
-    }, 400);
-});
-
-window.addEventListener('click', function (event) {
-    if (event.target === bookModal) {
-        if (bookItemRect) {
-            zoom();
-        }
-
-        bookModalContent.classList.remove('show');
-        bookModal.classList.remove('show');
-
-        setTimeout(() => {
-            bookModalContent.style.transformOrigin = "center center";
-        }, 400);
-    }
-});
 
 
 
-showPopularBooks(books);
 
 
-document.getElementById('book-toggle').addEventListener('click', function () {
-    const button = document.getElementById('book-toggle');
-    const title = document.getElementById('title');
-
-    if (button.textContent === "Show Popular Books") {
-        showPopularBooks();
-        title.textContent = "Popular Books";
-        title.setAttribute('data-text', "Popular Books");
-        button.textContent = 'Show New Additions';
-    } else {
-        showNewAdditions();
-        title.textContent = "New Additions";
-        title.setAttribute('data-text', "New Additions");
-
-        button.textContent = 'Show Popular Books';
-    }
-});
 
 // Function to display books in the books container
 function displayBooks(books) {
@@ -198,8 +135,8 @@ function displayBooks(books) {
 
         bookItem.classList.add('book-item');
         bookItem.style.backgroundImage = `url(${book.image})`;
-        bookItem.style.backgroundSize = "cover"; 
-        bookItem.style.backgroundPosition = "center"; 
+        bookItem.style.backgroundSize = "cover";
+        bookItem.style.backgroundPosition = "center";
         bookItem.innerHTML = `
         
 
@@ -237,7 +174,7 @@ function renderStars(container, rating) {
         if (i <= Math.floor(rating)) {
             star.classList.add('full');
         } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
-            star.classList.add('half'); 
+            star.classList.add('half');
             const percentage = (rating % 1) * 100;
             star.style.background = `linear-gradient(90deg, #FFD700 ${percentage}%, #ccc ${percentage}%)`;
         } else {
@@ -296,12 +233,11 @@ function zoom() {
 
 function updateBooksPerPage() {
     if (window.innerWidth > 1280) {
-        booksPerPage = 5; 
+        booksPerPage = 5;
     } else if (window.innerWidth > 640) {
-        booksPerPage = 4; 
+        booksPerPage = 4;
     } else {
-        booksPerPage = 3; 
+        booksPerPage = 3;
     }
 }
 
-window.addEventListener("resize", updateBooksPerPage);

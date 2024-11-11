@@ -1,75 +1,83 @@
-{
-    "books": [
-      {
-        "title": "Pride and Prejudice",
-        "author": "Jane Austen",
-        "rating": "4.5",
-        "image": "pictures/book1.jpg",
-        "addedDate": "2024-11-01T08:30:00Z"
-      },
-      {
-        "title": "1984",
-        "author": "George Orwell",
-        "rating": "4.8",
-        "image": "pictures/book2.jpg",
-        "addedDate": "2024-11-02T09:00:00Z"
-      },
-      {
-        "title": "To Kill a Mockingbird",
-        "author": "Harper Lee",
-        "rating": "4.6",
-        "image": "pictures/book3.jpg",
-        "addedDate": "2024-11-03T10:15:00Z"
-      },
-      {
-        "title": "The Great Gatsby",
-        "author": "F. Scott Fitzgerald",
-        "rating": "4.4",
-        "image": "pictures/book4.jpg",
-        "addedDate": "2024-11-04T11:45:00Z"
-      },
-      {
-        "title": "Moby-Dick",
-        "author": "Herman Melville",
-        "rating": "4.3",
-        "image": "pictures/book5.jpg",
-        "addedDate": "2024-11-05T12:30:00Z"
-      },
-      {
-        "title": "The Odyssey",
-        "author": "Homer",
-        "rating": "4.7",
-        "image": "pictures/book6.jpg",
-        "addedDate": "2024-11-06T13:00:00Z"
-      },
-      {
-        "title": "War and Peace",
-        "author": "Leo Tolstoy",
-        "rating": "4.8",
-        "image": "pictures/book7.jpg",
-        "addedDate": "2024-11-07T14:20:00Z"
-      },
-      {
-        "title": "Crime and Punishment",
-        "author": "Fyodor Dostoevsky",
-        "rating": "4.7",
-        "image": "pictures/book8.jpg",
-        "addedDate": "2024-11-08T15:00:00Z"
-      },
-      {
-        "title": "The Catcher in the Rye",
-        "author": "J.D. Salinger",
-        "rating": "4.2",
-        "image": "pictures/book9.jpg",
-        "addedDate": "2024-11-09T16:30:00Z"
-      },
-      {
-        "title": "The Brothers Karamazov",
-        "author": "Fyodor Dostoevsky",
-        "rating": "4.6",
-        "image": "pictures/book10.jpg",
-        "addedDate": "2024-11-10T17:45:00Z"
-      }
-    ]
-  }
-  
+
+ [
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "rating": "4.5",
+      "image": "pictures/book1.jpg",
+      "addedDate": "2024-11-01T08:30:00Z",
+      "description": "A classic novel of manners that explores issues of class, marriage, and morality."
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "rating": "4.8",
+      "image": "pictures/book2.jpg",
+      "addedDate": "2024-11-02T09:00:00Z",
+      "description": "A classic novel of manners that explores issues of class, marriage, and morality."
+    },
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "rating": "4.6",
+      "image": "pictures/book3.jpg",
+      "addedDate": "2024-11-03T10:15:00Z",
+      "description": "A classic novel of manners that explores issues of class, marriage, and morality."
+    },
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "rating": "4.4",
+      "image": "pictures/book4.jpg",
+      "addedDate": "2024-11-04T11:45:00Z",
+      "description": "A classic novel of manners that explores issues of class, marriage, and morality."
+    },
+    {
+      "title": "Moby-Dick",
+      "author": "Herman Melville",
+      "rating": "4.3",
+      "image": "pictures/book5.jpg",
+      "addedDate": "2024-11-05T12:30:00Z",
+      "description": "A classic novel of manners that explores issues of class, marriage, and morality."
+    },
+    {
+      "title": "The Odyssey",
+      "author": "Homer",
+      "rating": "4.7",
+      "image": "pictures/book6.jpg",
+      "addedDate": "2024-11-06T13:00:00Z",
+      "description": "The Odyssey is one of two major ancient Greek epic poems attributed to Homer. It is one of the oldest works of literature still widely read by modern audiences. Like the Iliad, the Odyssey is divided into 24 books. It follows the Greek hero Odysseus, king of Ithaca, and his journey home after the Trojan War. After the war, which lasted ten years, his journey from Troy to Ithaca, via Africa and southern Europe, lasted for ten additional years during which time he encountered many perils and all of his crewmates were killed."
+    },
+    {
+      "title": "War and Peace",
+      "author": "Leo Tolstoy",
+      "rating": "4.8",
+      "image": "pictures/book7.jpg",
+      "addedDate": "2024-11-07T14:20:00Z",
+      "description": "A classic novel of manners that explores issues of class, marriage, and morality."
+    },
+    {
+      "title": "Crime and Punishment",
+      "author": "Fyodor Dostoevsky",
+      "rating": "4.7",
+      "image": "pictures/book8.jpg",
+      "addedDate": "2024-11-08T15:00:00Z",
+      "description": "A classic novel of manners that explores issues of class, marriage, and morality."
+    },
+    {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "rating": "4.2",
+      "image": "pictures/book9.jpg",
+      "addedDate": "2024-11-09T16:30:00Z",
+      "description": "A classic novel of manners that explores issues of class, marriage, and morality."
+    },
+    {
+      "title": "The Brothers Karamazov",
+      "author": "Fyodor Dostoevsky",
+      "rating": "4.6",
+      "image": "pictures/book10.jpg",
+      "addedDate": "2024-11-10T17:45:00Z",
+      "description": "A classic novel of manners that explores issues of class, marriage, and morality."
+    }
+  ]
