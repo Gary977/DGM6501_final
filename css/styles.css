@@ -1,0 +1,638 @@
+* {
+    box-sizing: border-box;
+}
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Chakra Petch', Verdana, sans-serif;
+    font-size: 1.5rem;
+    background: #ffffff;
+}
+
+.book-modal {
+    visibility: hidden;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+.book-modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.book-modal-content {
+    display: flex;
+    flex-direction: row; /* 水平排列内容 */
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 60%;
+    text-align: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, #ffffff, #cccccc); /* 渐变背景 */
+    position: relative;
+    transform: scale(0.5);
+    transition: transform 0.4s ease-in-out;
+}
+
+.book-details {
+    flex: 1; /* 原有内容的宽度 */
+    margin-right: 1rem;
+}
+
+.book-description {
+    flex: 1; /* 简介的宽度 */
+    text-align: left;
+    padding-left: 1rem;
+    border-left: 2px solid #a1a1a1; /* 添加左边框分隔 */
+    color: #444;
+    line-height: 1.6;
+}
+
+#modalBookRating {
+    display: flex;
+    justify-content: center;
+
+}
+#modalBookTitle {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#modalBookAuthor {
+    font-size: 1.5rem;
+    color: #666;
+    margin-top: 0.5rem;
+    margin-bottom: 0rem;
+}
+
+
+.book-modal-content.show {
+    transform: scale(1);
+}
+
+.book-modal-content img {
+    height: 20rem;
+    border-radius: 0.5rem; /* 添加圆角使得图像更具美感 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    line-height: 1;
+    padding: 0.5rem;
+    z-index: 10; /* 确保关闭按钮位于弹窗之上 */
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #c2c2c2; /* 悬停时的颜色变化，增加视觉提示 */
+}
+
+.details-button {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #6200ea;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.details-button:hover {
+    background-color: #3700b3;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+
+    height: 9%;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff; /* White background for a clean, modern look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #333333; /* Dark text color for contrast */
+}
+
+/* Logo Styling */
+.logo img{    
+    width: 7rem;
+    object-fit: cover;
+}
+
+/* Search Section within Header */
+.search-section {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    flex-grow: 1;
+}
+.search-container {
+    display: flex;
+    border: 0.1rem solid #ccc;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0.1rem 0.1rem 0.5rem rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* White background for search box */
+    flex-grow: 1;
+    
+}
+
+#search-type {
+    border: none;
+    padding: 0.5rem;
+    background-color: #f0f0f0; /* Light gray for input background */
+    font-size: 1rem;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+#search-input {
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5rem;
+    flex-grow: 1;
+    font-size: 1rem;
+    outline: none;
+    background-color: #e0e0e0; /* White background for input */
+}
+#search-button {
+    background-color: #333333; /* Dark gray for button */
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#search-button:hover {
+    background-color: #555555; /* Slightly lighter for hover effect */
+}
+#search-button img {
+    width: 1.5rem;
+    height: 1.5rem;
+    filter: brightness(0) invert(1);
+}
+
+/* Primary Navigation Menu */
+.primary-menu {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+
+}
+
+.primary-menu li {
+    position: relative;
+}
+
+.primary-menu li a {
+    text-decoration: none;
+    color: #333333; /* Dark gray for primary menu links */
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+}
+
+.primary-menu li a:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Light gray hover effect */
+    border-radius: 0.25rem;
+}
+
+/* Dropdown Menu Styling */
+.primary-menu li ul {
+    display: none;
+    position: absolute;
+    top: calc(100% + 1rem); /* Add spacing below the parent menu item */
+    left: 0;
+    background-color: #ffffff; /* White background for dropdown menu */
+    padding: 1rem;
+    list-style: none;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    min-width: 10rem;
+}
+
+.primary-menu li:hover ul {
+    display: block;
+    z-index: 1;
+}
+
+.primary-menu li ul:hover {
+    display: block;
+}
+
+.primary-menu li ul li a {
+    display: block;
+    padding: 0.5rem;
+    color: #333333; /* Dark gray for dropdown links */
+    transition: background-color 0.3s ease;
+}
+
+.primary-menu li ul li a:hover {
+    background-color: #f0f0f0; /* Light gray hover effect for dropdown */
+    border-radius: 0.25rem;
+}
+
+.user-dashboard {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+#userAvatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+#userName {
+    font-size: 1rem;
+    color: #333;
+}
+
+.dropdown-arrow {
+    margin-left: 4px;
+    font-size: 0.8rem;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    z-index: 1000;
+    min-width: 150px;
+}
+
+.dropdown-menu li {
+    padding: 0.5rem 1rem;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.hero {
+    position: relative;
+    height: 40%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    background: #ffffff;
+}
+
+.hero-image-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    opacity: 75%;
+    object-fit: cover;
+}
+
+.hero-gradient {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+}
+
+.hero h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+
+
+/* Main Content Section */
+.content {
+    display: flex;
+    justify-content: space-around;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-toggle {
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+.prev-button,
+.next-button {
+    margin-top: 1rem;
+    padding: 1rem 1rem;
+}
+
+.book-toggle,
+.prev-button,
+.next-button,
+.book-item-buttons button {
+
+    font: 1rem 'Chakra Petch';
+    background: linear-gradient(to bottom, #757575, #424242);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.book-toggle:hover,
+.prev-button:hover,
+.next-button:hover,
+.book-item-buttons button:hover {
+    background: linear-gradient(to bottom, #616161, #333333);
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.6rem 0.8rem rgba(0, 0, 0, 0.4);
+}
+
+.book-toggle:active,
+.prev-button:active,
+.next-button:active,
+.book-item-buttons button:active {
+    background: linear-gradient(to bottom, #424242, #212121);
+    transform: translateY(0.2rem);
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+.book-slider {
+    display: flex;
+    position: relative;
+    background: #f6f6f6;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    width: 95%;
+    margin: 2rem;
+
+
+}
+
+.book-container-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    
+}
+
+.book-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.books-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+
+}
+
+
+
+.book-item {
+    position: relative;
+    aspect-ratio: 2 / 3; /* 固定长宽比，例如2:3 */
+    flex: 0 0 calc((100% / 5) - 3rem);
+    max-width: 20rem;
+    margin: 1.5rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    padding: 1rem;
+    background-size: cover;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book-item:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.star {
+
+    width: 2.5rem;
+    height: 2.5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+
+.star.half {
+    background: linear-gradient(90deg, #FFD700 50%, #ccc 50%);
+}
+
+.star.empty {
+    background-color: #ccc;
+}
+
+.star.full {
+    background-color: #FFD700;
+}
+
+
+/* Footer Section */
+.footer {
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.footer-links {
+    margin-top: 0.5rem;
+}
+
+.footer-links a img {
+    width: 10rem;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.footer-links a img:hover {
+    /* magnify the picture */
+    transform: scale(1.1);
+}
+
+@media (max-width:1280px) {
+    .book-item{
+        flex: 0 0 calc((100% / 4) - 3rem);
+    }
+}
+
+@media  (max-width:960px) {
+
+    .primary-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hamburger.active .primary-menu {
+        display: flex;
+    }
+
+
+    .primary-menu li:hover ul {
+        display: none;
+    }
+
+}
+
+
+
+
+@media (max-width:640px) {
+    html {
+        width: 640px;
+    }
+
+    .book-item{
+        flex: 0 0 calc((100% / 3) - 3rem);
+    }
+}
+
+@keyframes animation-before {
+    0% {
+        clip-path: inset(0 0 1em 0);
+    }
+
+    100% {
+        clip-path: inset(1em 0 0 0);
+    }
+}
+
+@keyframes animation-after {
+    0% {
+        clip-path: inset(1em 0 0 0);
+    }
+
+    100% {
+        clip-path: inset(0 0 1em 0);
+    }
+}
+
+.title {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    font-size: 3rem;
+    font-family: 'Audiowide';
+    width: 100%;
+    padding-left: 1rem;
+    background-clip: border-box;
+    border-radius: 0.5rem;
+}
+
+.title::before,
+.title::after {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    width: 100%;
+    height: 100%;
+    content: attr(data-text);
+    background: transparent;
+
+}
+
+.title::before {
+    text-shadow: 0.3rem 0 rgb(177, 176, 176);
+    animation: animation-before 3s infinite linear alternate-reverse;
+}
+
+.title::after {
+    text-shadow: -0.3rem 0 rgb(65, 65, 65);
+    animation: animation-after 3s infinite linear alternate-reverse;
+}

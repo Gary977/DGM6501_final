@@ -1,0 +1,75 @@
+{
+    "books": [
+      {
+        "title": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "rating": "4.5",
+        "image": "pictures/book1.jpg",
+        "addedDate": "2024-11-01T08:30:00Z"
+      },
+      {
+        "title": "1984",
+        "author": "George Orwell",
+        "rating": "4.8",
+        "image": "pictures/book2.jpg",
+        "addedDate": "2024-11-02T09:00:00Z"
+      },
+      {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "rating": "4.6",
+        "image": "pictures/book3.jpg",
+        "addedDate": "2024-11-03T10:15:00Z"
+      },
+      {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "rating": "4.4",
+        "image": "pictures/book4.jpg",
+        "addedDate": "2024-11-04T11:45:00Z"
+      },
+      {
+        "title": "Moby-Dick",
+        "author": "Herman Melville",
+        "rating": "4.3",
+        "image": "pictures/book5.jpg",
+        "addedDate": "2024-11-05T12:30:00Z"
+      },
+      {
+        "title": "The Odyssey",
+        "author": "Homer",
+        "rating": "4.7",
+        "image": "pictures/book6.jpg",
+        "addedDate": "2024-11-06T13:00:00Z"
+      },
+      {
+        "title": "War and Peace",
+        "author": "Leo Tolstoy",
+        "rating": "4.8",
+        "image": "pictures/book7.jpg",
+        "addedDate": "2024-11-07T14:20:00Z"
+      },
+      {
+        "title": "Crime and Punishment",
+        "author": "Fyodor Dostoevsky",
+        "rating": "4.7",
+        "image": "pictures/book8.jpg",
+        "addedDate": "2024-11-08T15:00:00Z"
+      },
+      {
+        "title": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "rating": "4.2",
+        "image": "pictures/book9.jpg",
+        "addedDate": "2024-11-09T16:30:00Z"
+      },
+      {
+        "title": "The Brothers Karamazov",
+        "author": "Fyodor Dostoevsky",
+        "rating": "4.6",
+        "image": "pictures/book10.jpg",
+        "addedDate": "2024-11-10T17:45:00Z"
+      }
+    ]
+  }
+  
