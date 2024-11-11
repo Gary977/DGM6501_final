@@ -1,7 +1,7 @@
 // loadHeaderFooter.js
 
 
-fetch('../header.html')
+fetch('https://raw.githubusercontent.com/gary977/DGM6501_final/main/header.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('header-container').innerHTML = data;
@@ -12,7 +12,7 @@ fetch('../header.html')
     .catch(error => console.error('Error loading header:', error));
 
 
-fetch('../footer.html')
+fetch('https://raw.githubusercontent.com/gary977/DGM6501_final/main/footer.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('footer-container').innerHTML = data;
