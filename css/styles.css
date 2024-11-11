@@ -6,18 +6,8 @@
 * {
     box-sizing: border-box;
 }
-@property --rotate {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-html,
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
 
-}
+
 
 body {
     font-family: 'Chakra Petch', Verdana, sans-serif;
@@ -48,29 +38,29 @@ body {
 
 .book-modal-content {
     display: flex;
-    flex-direction: row; /* 水平排列内容 */
+    flex-direction: row; 
     padding: 2rem;
     border-radius: 1rem;
     width: 60%;
     text-align: center;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(to right, #ffffff, #cccccc); /* 渐变背景 */
+    background: linear-gradient(to right, #ffffff, #cccccc);
     position: relative;
     transform: scale(0.5);
     transition: transform 0.4s ease-in-out;
 }
 
 .book-details {
-    flex: 1; /* 原有内容的宽度 */
+    flex: 1;
     margin-right: 1rem;
 }
 
 .book-description {
-    flex: 1; /* 简介的宽度 */
+    flex: 1; 
     text-align: left;
     padding-left: 1rem;
-    border-left: 2px solid #a1a1a1; /* 添加左边框分隔 */
+    border-left: 2px solid #a1a1a1; 
     color: #444;
     line-height: 1.6;
 }
@@ -102,7 +92,7 @@ body {
 
 .book-modal-content img {
     height: 20rem;
-    border-radius: 0.5rem; /* 添加圆角使得图像更具美感 */
+    border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -118,35 +108,26 @@ body {
     outline: none;
     line-height: 1;
     padding: 0.5rem;
-    z-index: 10; /* 确保关闭按钮位于弹窗之上 */
+    z-index: 10; 
     transition: color 0.3s ease;
 }
 
 .close-button:hover {
-    color: #c2c2c2; /* 悬停时的颜色变化，增加视觉提示 */
+    color: #c2c2c2;
 }
 
-.details-button {
+.detail {
     position: absolute;
     right: 1.5rem;
     bottom: 1.5rem;
     padding: 0.75rem 1.5rem;
-    background-color: #6200ea;
-    color: white;
     text-decoration: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.details-button:hover {
-    background-color: #3700b3;
-}
 
 
 .hero {
+    padding-top: 10%;
     position: relative;
     height: 40%;
     display: flex;
@@ -210,22 +191,18 @@ body {
     align-items: center;
 }
 
-.book-toggle {
+.toggle {
     padding: 0.5rem 1rem;
     margin-right: 1rem;
-    margin-top: 1rem;
+
 }
 
-.prev-button,
-.next-button {
-    margin-top: 1rem;
+.prev,
+.next {
     padding: 1rem 1rem;
 }
 
-.book-toggle,
-.prev-button,
-.next-button,
-.book-item-buttons button {
+.button-primary{
 
     font: 1rem 'Chakra Petch';
     background: linear-gradient(to bottom, #757575, #424242);
@@ -234,22 +211,17 @@ body {
     border-radius: 0.5rem;
     box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.3);
     cursor: pointer;
+    margin-top: 1rem;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-.book-toggle:hover,
-.prev-button:hover,
-.next-button:hover,
-.book-item-buttons button:hover {
+.button-primary:hover{
     background: linear-gradient(to bottom, #616161, #333333);
     transform: translateY(-0.2rem);
     box-shadow: 0 0.6rem 0.8rem rgba(0, 0, 0, 0.4);
 }
 
-.book-toggle:active,
-.prev-button:active,
-.next-button:active,
-.book-item-buttons button:active {
+.button-primary:active {
     background: linear-gradient(to bottom, #424242, #212121);
     transform: translateY(0.2rem);
     box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
@@ -310,7 +282,6 @@ body {
 }
 
 .star {
-
     width: 2.5rem;
     height: 2.5rem;
     background-size: cover;
@@ -331,33 +302,13 @@ body {
     background-color: #FFD700;
 }
 
-
-
-
 @media (max-width:1280px) {
     .book-item{
         flex: 0 0 calc((100% / 4) - 3rem);
     }
 }
 
-@media  (max-width:960px) {
 
-    .primary-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .hamburger.active .primary-menu {
-        display: flex;
-    }
-
-
-    .primary-menu li:hover ul {
-        display: none;
-    }
-
-}
 
 
 

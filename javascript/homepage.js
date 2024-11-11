@@ -24,7 +24,7 @@ async function initialize() {
         if (!response.ok) throw new Error('Network response was not ok');
 
         books = await response.json();
-        console.log(books); // 调试信息：检查 books 是否正确加载
+        console.log(books); 
         showPopularBooks();
   
         window.addEventListener("resize", updateBooksPerPage);

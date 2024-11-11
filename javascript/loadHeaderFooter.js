@@ -1,20 +1,36 @@
 // loadHeaderFooter.js
 // 'https://raw.githubusercontent.com/gary977/DGM6501_final/main/header.html'
+// https://raw.githubusercontent.com/gary977/DGM6501_final/main/footer.html'
+async function loadHeaderAndFooter() {
 
-fetch('header.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('header-container').innerHTML = data;
+    document.body.style.display = 'none';
+
+    try {
+
+        const headerResponse = await fetch('https://raw.githubusercontent.com/gary977/DGM6501_final/main/header.html');
+        const headerData = await headerResponse.text();
+        document.getElementById('header-container').innerHTML = headerData;
+
+
+        const footerResponse = await fetch('https://raw.githubusercontent.com/gary977/DGM6501_final/main/footer.html');
+        const footerData = await footerResponse.text();
+        document.getElementById('footer-container').innerHTML = footerData;
+
+
         const headerScript = document.createElement('script');
-        headerScript.src = 'javascript/header.js'; // 路径根据实际情况调整
+        headerScript.src = 'javascript/header.js';
         document.body.appendChild(headerScript);
-    })
-    .catch(error => console.error('Error loading header:', error));
 
 
-fetch('https://raw.githubusercontent.com/gary977/DGM6501_final/main/footer.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('footer-container').innerHTML = data;
-    })
-    .catch(error => console.error('Error loading footer:', error));
+
+        document.body.style.display = 'block';
+
+    } catch (error) {
+        console.error('Error loading header or footer:', error);
+
+        document.body.style.display = 'block';
+    }
+}
+
+// 调用加载函数
+loadHeaderAndFooter();

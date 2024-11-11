@@ -4,6 +4,10 @@ header {
     display: flex;
     justify-content: space-between;
     height: 5rem;
+    position: sticky !important;
+    z-index: 1000;
+    top: 0;
+    width: 100%;
     align-items: center;
     padding: 1rem 2rem;
     background-color: #ffffff; /* White background for a clean, modern look */
@@ -51,6 +55,7 @@ header {
     font-family: 'Roboto', sans-serif;
     padding: 0.5rem;
     flex-grow: 1;
+    width: 75%;
     font-size: 1rem;
     outline: none;
     background-color: #e0e0e0; /* White background for input */
@@ -64,6 +69,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-grow: 1;
+    max-width: 3rem;
+    width: 25%;
 }
 
 #search-button:hover {
@@ -97,10 +105,10 @@ header {
 
 .primary-menu a:hover {
     background-color: #f0f0f0;
-    border-radius: 0.25rem; /* 等于 4px */
+    border-radius: 0.25rem; 
 }
 
-/* Dropdown Menu 样式 */
+
 .dropdown-menu {
     display: none; 
     position: absolute;
@@ -130,8 +138,8 @@ header {
     cursor: pointer;
     margin-left: 0.5rem;
     padding: 0.5rem 2rem;
-    border: 0.1rem solid #ccc; /* 边框颜色 */
-    border-radius: 1.5rem; /* 圆角效果 */
+    border: 0.1rem solid #ccc; 
+    border-radius: 1.5rem; 
 }
 
 
@@ -153,4 +161,22 @@ header {
 .dropdown-arrow {
     margin-left: 0.25rem; 
     font-size: 0.8rem;
+}
+@media  (max-width:960px) {
+
+    .primary-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hamburger.active .primary-menu {
+        display: flex;
+    }
+
+
+    .primary-menu li:hover ul {
+        display: none;
+    }
+
 }

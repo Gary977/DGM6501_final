@@ -1,3 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Chakra Petch', Verdana, sans-serif;
+    font-size: 1.5rem;
+    background: #ffffff;
+}
+
 /* Auth Container */
 .auth-container {
     width: 100%;
@@ -43,7 +59,7 @@
     box-sizing: border-box;
 }
 
-/* 按钮样式 */
+
 .auth-button {
     width: 100%;
     padding: 0.75rem;
@@ -63,7 +79,7 @@
     background-color: #555;
 }
 
-/* 切换链接 */
+
 .auth-switch {
     margin-top: 1rem;
     font-size: 0.9rem;
