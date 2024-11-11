@@ -1,0 +1,23 @@
+/* Footer Section */
+.footer {
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.footer-links {
+    margin-top: 0.5rem;
+}
+
+.footer-links a img {
+    width: 10rem;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.footer-links a img:hover {
+    /* magnify the picture */
+    transform: scale(1.1);
+}

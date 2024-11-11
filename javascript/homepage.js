@@ -1,8 +1,7 @@
 //for slider
 let currentIndex = 0;
 let booksPerPage = 5;
-// log in state
-let isLoggedIn = false;
+
 //json data
 let books = [];
 //for bookModal
@@ -16,13 +15,6 @@ const modalBookDescription = document.getElementById('modalBookDescription');
 const closeButton = document.querySelector('.close-button');
 let bookItemRect = null;
 
-
-//for userinfo
-const userDashboard = document.getElementById('userDashboard');
-const userName = document.getElementById('userName');
-const userAvatar = document.getElementById('userAvatar');
-const userMenu = document.getElementById('userMenu');
-
 initialize();
 
 
@@ -34,7 +26,7 @@ async function initialize() {
         books = await response.json();
         console.log(books); // 调试信息：检查 books 是否正确加载
         showPopularBooks();
-        updateUserInfo();
+  
         window.addEventListener("resize", updateBooksPerPage);
 
         //book toggle
@@ -56,22 +48,7 @@ async function initialize() {
             }
         });
 
-        //log in
-        userDashboard.addEventListener('click', () => {
-            if (isLoggedIn) {
-                userMenu.style.display = userMenu.style.display === 'block' ? 'none' : 'block';
-            } else {
-                isLoggedIn = true;
-            }
-        });
-
-        //user menu exit
-        window.addEventListener('click', (event) => {
-            if (!userDashboard.contains(event.target)) {
-                userMenu.style.display = 'none';
-            }
-        });
-
+        
         //book modal exit
         closeButton.addEventListener('click', function () {
             if (bookItemRect) {
@@ -105,18 +82,6 @@ async function initialize() {
 
     } catch (error) {
         console.error('Failed to load books:', error);
-    }
-}
-
-function updateUserInfo() {
-    if (isLoggedIn) {
-        userName.textContent = "John Doe"; // 用户名
-        userAvatar.src = "pictures/test.jpg"; // 用户头像
-        userDashboard.classList.add('logged-in');
-    } else {
-        userName.textContent = "Log In";
-        userAvatar.src = "pictures/test.jpg"; // 默认头像
-        userDashboard.classList.remove('logged-in');
     }
 }
 
