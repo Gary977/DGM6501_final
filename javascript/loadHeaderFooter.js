@@ -1,7 +1,7 @@
 // loadHeaderFooter.js
+// 'https://raw.githubusercontent.com/gary977/DGM6501_final/main/header.html'
 
-
-fetch('https://raw.githubusercontent.com/gary977/DGM6501_final/main/header.html')
+fetch('header.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('header-container').innerHTML = data;

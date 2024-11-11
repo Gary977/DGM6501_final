@@ -1,12 +1,14 @@
+
+
 header {
     display: flex;
     justify-content: space-between;
-
-    height: 9%;
+    height: 5rem;
     align-items: center;
     padding: 1rem 2rem;
     background-color: #ffffff; /* White background for a clean, modern look */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
     color: #333333; /* Dark text color for contrast */
 }
 
@@ -19,10 +21,12 @@ header {
 /* Search Section within Header */
 .search-section {
     display: flex;
+    max-width: 70%;
     align-items: center;
     margin-left: 2rem;
     flex-grow: 1;
 }
+
 .search-container {
     display: flex;
     border: 0.1rem solid #ccc;
@@ -71,7 +75,6 @@ header {
     filter: brightness(0) invert(1);
 }
 
-/* 主导航和下拉菜单的通用样式 */
 .primary-menu, .dropdown-menu {
     list-style: none;
     padding: 0;
@@ -83,10 +86,11 @@ header {
     position: relative;
 }
 
-.primary-menu a {
+.primary-menu a,
+.dropdown-menu a{
     text-decoration: none;
     color: #333;
-    padding: 0.625rem 0.9375rem; /* 等于 10px 15px */
+    padding: 0.625rem 0.9375rem;
     display: block;
     transition: background-color 0.3s ease;
 }
@@ -98,36 +102,39 @@ header {
 
 /* Dropdown Menu 样式 */
 .dropdown-menu {
-    display: none; /* 默认隐藏 */
+    display: none; 
     position: absolute;
-    top: calc(100% + 0.3125rem); /* 等于 5px */
+    top: calc(100% + 0.3125rem); 
     left: 0;
     background-color: #ffffff;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* 等于 4px 8px */
-    border-radius: 0.5rem; /* 等于 8px */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem; 
     z-index: 1000;
     padding: 0;
-    min-width: 9.375rem; /* 等于 150px */
+    min-width: 9.375rem; 
 }
 
 .dropdown-menu li {
-    display: block; /* 下拉菜单项为块级元素 */
+    display: block; 
 }
 
-/* Hover 状态显示下拉菜单 */
-.primary-menu > ul > li:hover .dropdown-menu,
-.user-dashboard:hover .dropdown-menu {
+.primary-menu > ul > li:hover .dropdown-menu{
     display: block;
 }
 
-/* User Dashboard 样式 */
+
 .user-dashboard {
     display: flex;
     align-items: center;
     position: relative;
     cursor: pointer;
-    margin-left: auto;
+    margin-left: 0.5rem;
+    padding: 0.5rem 2rem;
+    border: 0.1rem solid #ccc; /* 边框颜色 */
+    border-radius: 1.5rem; /* 圆角效果 */
 }
+
+
 
 .user-info {
     display: flex;
@@ -135,18 +142,15 @@ header {
 }
 
 #userAvatar {
-    width: 2rem; /* 等于 32px */
-    height: 2rem; /* 等于 32px */
+    width: 2.5rem; 
+    height: 2.5rem; 
     border-radius: 50%;
-    margin-right: 0.5rem; /* 等于 8px */
+    margin-right: 0.5rem; 
 }
 
-#userName {
-    font-size: 1rem;
-    color: #333;
-}
+
 
 .dropdown-arrow {
-    margin-left: 0.25rem; /* 等于 4px */
+    margin-left: 0.25rem; 
     font-size: 0.8rem;
 }
