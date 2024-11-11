@@ -28,7 +28,7 @@ initialize();
 
 async function initialize() {
     try {
-        const response = await fetch('https://gary977.github.io/DGM6501_final/json/books.json');
+        const response = await fetch('https://raw.githubusercontent.com/gary977/DGM6501_final/main/json/books.json');
         if (!response.ok) throw new Error('Network response was not ok');
 
         books = await response.json();
