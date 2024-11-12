@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Book Exchange Website Mockup</title>
+    <link rel="stylesheet" href="css/profile.css">
+
+    <script src="javascript/loadHeaderFooter.js" defer></script>
+</head>
+
+<body>
+    <div id="header-container"></div>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="images/default-avatar.png" alt="User Avatar" class="profile-avatar" id="avatar-preview">
+            <input type="file" id="avatar-input" accept="image/*" onchange="updateAvatar()" hidden>
+            <button type="button" class="button-primary avatar" onclick="document.getElementById('avatar-input').click()">Change Avatar</button>
+            <h2 id="username-display">Username</h2>
+            <p id="email-display">user@example.com</p>
+        </div>
+        <div class="profile-info">
+            <h3>Personal Information</h3>
+
+            <label>Username: <span id="username">JohnDoe</span></label>
+            <label>Email: <span id="email">johndoe@example.com</span></label>
+    
+
+            <label>Birthdate: <input type="date" id="birthdate"></label>
+            <label>Bio: <textarea id="bio" rows="4" maxlength="200" placeholder="Write something about yourself..."></textarea></label>
+        </div>
+        <button class="button-primary save" id="save">Save Changes</button>
+        <div class="save-message" id="save-message">Changes saved!</div>
+    </div>
+    
+    <div id="footer-container"></div>
+
+    <script src="javascript/profile.js"></script>
+</body>
+
+</html>

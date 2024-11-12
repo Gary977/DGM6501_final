@@ -22,7 +22,7 @@
                 <p id="modalBookRating"></p>
             </div>
             <div class="book-description" id="modalBookDescription">
-                <!-- 简介内容将通过 JavaScript 动态插入 -->
+
             </div>
 
             <a id="detailsButton" class="button-primary detail" href="#" target="_blank">View Details</a>
@@ -45,12 +45,8 @@
 
     <!-- Main Content -->
     <section class="content">
-
-
-
+        <!-- Book Slider -->
         <div class="book-slider">
-
-
             <div class="book-container-wrapper">
                 <div class="book-header">
                     <h1 data-text="Popular Books" class="title" id="title">Popular Books</h1>
@@ -60,27 +56,55 @@
                     <button class="button-primary next" onclick="nextSlide()">
                         <span class="material-icons">arrow_forward</span>
                     </button>
-
                     <button id="book-toggle" class="button-primary toggle">Show New Additions</button>
                 </div>
-
-                <div class="books-container" id="books-container">
-
+                <div class="books-container" id="books-container"></div>
+            </div>
+        </div>
+        <!-- Chart  -->
+        <div class="data-section">
+            <h1 data-text="Our Community" class="title">Our Community</h1>
+            <div class="stats-container">
+                <div class="card">
+                    <div class="header-container">
+                        <h3 class="card-title">Overview</h3>
+                        <div class="switch-container">
+                            <button class="switch-btn active">1Y</button>
+                            <button class="switch-btn">6M</button>
+                            <button class="switch-btn">3M</button>
+                        </div>
+                    </div>
+                    <div class="stats-data">
+                        <div class="stat-item">
+                            <h3>1500</h3>
+                            <p>Book Exchanges</p>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="stat-item">
+                            <h3>4500</h3>
+                            <p>Total Users</p>
+                        </div>
+                    </div>
+                    <canvas id="exchangeChart"></canvas>
                 </div>
 
+                <div class="card">
+                    <h3 class="card-title">User Growth</h3>
+                    <div class="chart-container">
+                        <canvas id="userChart"></canvas>
+                    </div>
+                </div>
             </div>
-
-
         </div>
 
 
 
-        </div>
 
     </section>
 
 
     <div id="footer-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="javascript/homepage.js"></script>
 </body>

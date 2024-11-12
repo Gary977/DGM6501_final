@@ -32,5 +32,4 @@ async function loadHeaderAndFooter() {
     }
 }
 
-// 调用加载函数
 loadHeaderAndFooter();

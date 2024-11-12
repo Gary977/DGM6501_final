@@ -12,6 +12,8 @@ function registerUser(event) {
         return;
     }
 
+
+
     if(password !== confirm){
         alert('Please ensure the confirm password is correct.')
         return;
@@ -20,7 +22,11 @@ function registerUser(event) {
     const userData = {
         email: email,
         password: password,
+        birthdate:"",
+        bio:"",
+        avatar:"../pictures/default.jpg"
     };
+    
     localStorage.setItem(username, JSON.stringify(userData));
     
 

@@ -78,6 +78,8 @@ async function initialize() {
             }
         });
 
+        
+
 
 
     } catch (error) {
@@ -205,4 +207,114 @@ function updateBooksPerPage() {
         booksPerPage = 3;
     }
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const exchangeData1Y = [150, 200, 180, 220, 250];
+    const exchangeData6M = [100, 150, 200, 180, 220];
+    const exchangeData3M = [80, 130, 150, 140, 200];
+    let currentChart;
+
+    function initializeChart(data) {
+        const ctx = document.getElementById("exchangeChart").getContext("2d");
+        if (currentChart) {
+            currentChart.destroy(); 
+        }
+        currentChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+                datasets: [{
+                    label: "Book Exchanges",
+                    data: data,
+                    borderColor: "#4a4a4a", 
+                    backgroundColor: "rgba(74, 74, 74, 0.1)", 
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                scales: {
+                    x: {
+                        grid: {
+                            color: "#d3d3d3" 
+                        },
+                        ticks: {
+                            color: "#4a4a4a"
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: "#d3d3d3" 
+                        },
+                        ticks: {
+                            color: "#4a4a4a" 
+                        }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    }
+
+    initializeChart(exchangeData1Y);
+
+    document.querySelectorAll('.switch-btn').forEach((button, index) => {
+        button.addEventListener('click', () => {
+            document.querySelectorAll('.switch-btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            if (index === 0) initializeChart(exchangeData1Y); // 1Y
+            if (index === 1) initializeChart(exchangeData6M); // 6M
+            if (index === 2) initializeChart(exchangeData3M); // 3M
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const userData = [300, 400, 500, 600, 750];
+
+    new Chart(document.getElementById("userChart"), {
+        type: 'bar',
+        data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+            datasets: [{
+                label: "Users",
+                data: userData,
+                backgroundColor: "#8e8e8e",
+                borderRadius: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+                x: {
+                    grid: {
+                        color: "#d3d3d3"
+                    },
+                    ticks: {
+                        color: "#4a4a4a" 
+                    }
+                },
+                y: {
+                    grid: {
+                        color: "#d3d3d3" 
+                    },
+                    ticks: {
+                        color: "#4a4a4a" 
+                    }
+                }
+            },
+            plugins: {
+                legend: { display: false }
+            }
+        }
+    });
+
+});
 

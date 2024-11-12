@@ -33,8 +33,9 @@ function updateUserInfo() {
 
     if (isLoggedIn) {
         const currentUser = localStorage.getItem('currentUser');
+        const userData = JSON.parse(localStorage.getItem(currentUser));
         userName.textContent = currentUser;
-        userAvatar.src = "pictures/test.jpg"; 
+        userAvatar.src = userData.avatar; 
         userDashboard.classList.add('logged-in');
     } else {
         userName.textContent = "Log In";
@@ -47,7 +48,7 @@ function logoutUser() {
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('currentUser');
     alert('Logged out successfully!');
-    window.location.href = 'login.html'; // 重定向到登录页面
+    window.location.href = 'login.html'; 
 }
 
 document.addEventListener('DOMContentLoaded', updateUserInfo);

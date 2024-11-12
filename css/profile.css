@@ -1,0 +1,124 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+
+#header-container{
+    position: sticky !important;
+    top: 0;
+    z-index: 1000;
+}
+
+.profile-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+}
+
+.profile-container:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.05);
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+
+input[type="date"], textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+input[type="date"]:focus, textarea:focus {
+    background-color: #e0e0e0;
+    outline: none;
+}
+
+
+.button-primary{
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0 auto;
+    font: 1rem 'Chakra Petch';
+    background: linear-gradient(to bottom, #757575, #424242);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.button-primary:hover{
+    background: linear-gradient(to bottom, #616161, #333333);
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.6rem 0.8rem rgba(0, 0, 0, 0.4);
+}
+
+.button-primary:active {
+    background: linear-gradient(to bottom, #424242, #212121);
+    transform: translateY(0.2rem);
+    box-shadow: 0 0.2rem 0.4rem 
+    rgba(0, 0, 0, 0.2);
+}
+
+.avatar{
+    width: 40%;
+}
+/* 保存成功提示消息 */
+.save-message {
+    display: none;
+    color: #535353;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 500;
+}
