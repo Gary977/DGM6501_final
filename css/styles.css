@@ -10,6 +10,74 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Chakra Petch', Verdana, sans-serif;
+    overflow-y: hidden; /* 阻止页面纵向滚动 */
+
+}
+
+
+
+.background{
+    position: fixed;
+    bottom: 0;
+    height: 10rem;
+    width: 100%;
+    z-index: -1;
+}
+
+.background .wave{
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background-size: 50% 100%;
+    z-index: 2;
+    opacity: 0.4;
+    
+}
+
+.wave.wv1{
+    top:2rem;
+    left: -100%;
+    opacity: 0.2;
+    background: url(../pictures/wave1.png);
+    animation: to-right 15s infinite linear;
+}
+.wave.wv2{
+    top:3rem;
+    left: 0;
+    opacity: 0.3;
+    background: url(../pictures/wave2.png);
+    animation: to-left 25s infinite linear;
+}
+.wave.wv3{
+    top:4rem;
+    left: -100%;
+    opacity: 0.2;
+    background: url(../pictures/wave3.png);
+    animation: to-right 35s infinite linear;
+}
+
+@keyframes to-right{
+    0%{
+        transform: translateX(0) translateZ(0) scaleY(1);
+    }
+
+    50%{
+        transform: translateX(25%) translateZ(0) scaleY(0.7);
+    }
+
+    100%{
+        transform: translateX(50%) translateZ(0) scaleY(1);
+    }
+}
+
+@keyframes to-left{
+    from{
+        transform: translate(0%,0);
+    }
+
+    to{
+        transform: translate(-50%,0);
+    }
 }
 
 #header-container{
@@ -19,6 +87,8 @@ html, body {
 }
 
 body {
+    height: 100vh;
+    overflow-y: auto; /* 允许内容区域滚动 */
 
     font-size: 1.5rem;
     background: #ffffff;
@@ -197,7 +267,9 @@ body {
     justify-content: space-around;
     height: fit-content;
     flex-direction: column;
+    scroll-padding-bottom: 10rem;
     align-items: center;
+
 }
 
 .toggle {
@@ -237,18 +309,19 @@ body {
 }
 
 .book-slider {
+    background-color: #e0e0e06e;
     display: flex;
     position: relative;
-    background: #f6f6f6;
     border-radius: 1rem;
     box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    width: 95%;
+    width: 90%;
     margin: 2rem;
-
-
 }
 
+ 
+
 .book-container-wrapper {
+    
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -312,10 +385,10 @@ body {
 
 
 .data-section {
-    background: #f6f6f6;
+    background-color: #e0e0e06e;
     border-radius: 1rem;
     box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
-    width: 95%;
+    width: 90%;
     margin: 2rem;
     padding: 1.5rem;
 
@@ -426,7 +499,6 @@ canvas {
     height: auto !important;
     max-width: 100%;
 }
-
 
 
 

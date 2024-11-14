@@ -6,9 +6,10 @@ header {
     height: 5rem;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #ffffff; /* White background for a clean, modern look */
     box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
     font-size: 1.2rem;
+    background-color: #ffffffe0;
+    backdrop-filter: blur(15px);
     color: #333333; /* Dark text color for contrast */
 }
 
@@ -16,6 +17,13 @@ header {
 .logo img{    
     width: 7rem;
     object-fit: cover;
+}
+
+.icon{
+    width: 2rem;
+    vertical-align: middle;
+    opacity: 0.8;
+    margin-right: 0.5rem;
 }
 
 /* Search Section within Header */
@@ -99,8 +107,9 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.primary-menu a:hover {
-    background-color: #f0f0f0;
+.primary-menu a:hover,
+.dropdown-menu a:hover{
+    background-color: #bdbdbd;
     border-radius: 0.25rem; 
 }
 
@@ -110,7 +119,8 @@ header {
     position: absolute;
     top: calc(100% + 0.3125rem); 
     left: 0;
-    background-color: #ffffff;
+    background-color: #ffffffe0;
+    backdrop-filter: blur(15px);
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
     border-radius: 0.5rem; 
     z-index: 1000;
@@ -134,7 +144,7 @@ header {
     cursor: pointer;
     margin-left: 0.5rem;
     padding: 0.5rem 2rem;
-    border: 0.1rem solid #ccc; 
+    border: 0.1rem solid #8b8b8b; 
     border-radius: 1.5rem; 
 }
 

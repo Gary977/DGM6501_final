@@ -7,7 +7,7 @@ async function loadHeaderAndFooter() {
 
     try {
 
-        const headerResponse = await fetch('https://raw.githubusercontent.com/gary977/DGM6501_final/main/header.html');
+        const headerResponse = await fetch('header.html');
         const headerData = await headerResponse.text();
         document.getElementById('header-container').innerHTML = headerData;
 
