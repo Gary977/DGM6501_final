@@ -7,18 +7,20 @@
     </div>
     <!-- Search Section within Header -->
     <div class="search-section">
-        <div class="search-container">
-            <select name="search-type" id="search-type">
-                <option value="title">Books</option>
-                <option value="author">Author</option>
-                <option value="genre">Genre</option>
-            </select>
-            <input type="text" id="search-input" placeholder="Search for books..." />
-            <button id="search-button">
-                <img src="icons/search.svg" alt="Search">
-            </button>
-        </div>
+
+            <form action="search.html" class="search-container" method="GET">
+                <select name="searchType" id="search-type">
+                    <option value="title">Books</option>
+                    <option value="author">Author</option>
+                </select>
+                <input type="text" name="query" id="search-input" placeholder="Search for books..." />
+                <button type="submit" id="search-button">
+                    <img src="icons/search.svg" alt="Search">
+                </button>
+            </form>
+
     </div>
+    
 
     <nav class="primary-menu">
         <ul>
@@ -27,7 +29,10 @@
                     <img src="icons/home.png" alt="Profile Icon" class="icon">Home
                 </a>
             </li>
-            <li><a href="books.html">Books</a>
+            <li>
+                <a href="help.html">
+                    <img src="icons/help.png" alt="Profile Icon" class="icon">Help
+                </a>
     
                 <ul class="dropdown-menu">
                     <li><a href="fiction.html">Fiction</a></li>
