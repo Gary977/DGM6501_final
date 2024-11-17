@@ -7,26 +7,27 @@
 * {
     box-sizing: border-box;
 }
+
 html, body {
     margin: 0;
     padding: 0;
     font-family: 'Chakra Petch', Verdana, sans-serif;
 
 }
+
 #header-container{
     position: sticky !important;
     top: 0;
     z-index: 1000;
 }
 
-/* 搜索结果页面容器样式 */
 .search-results-container {
     width: 80%;
     margin: 20px auto;
     font-family: Arial, sans-serif;
 }
 
-/* 标题样式 */
+
 .search-results-container h2 {
     font-size: 2rem;
     font-weight: bold;
@@ -34,51 +35,49 @@ html, body {
     margin-bottom: 1.5rem;
 }
 
-/* 搜索结果卡片样式 */
+
 .book-result {
     display: flex;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 0.8rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
     
     transition: transform 0.2s ease;
 }
 
 .book-result:hover {
-    transform: translateY(-5px); /* 悬停时上移效果 */
+    transform: translateY(-5px); 
 }
 
-/* 书籍封面图片样式 */
+
 .book-result img {
     aspect-ratio: 2/3;
     height:20rem;
     object-fit: cover;
-    margin-right: 15px;
-    border-radius: 8px 0 0 8px; /* 圆角只作用于左上和左下角 */
+    margin-right: 1.5rem;
+    border-radius: 0.5rem 0 0 0.5rem; 
 }
 
-/* 书籍内容布局 */
+
 .book-details {
-    padding: 15px;
+    padding: 0.5rem;
     flex: 1;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
     text-align: left;
 }
 
-/* 书名样式 */
+
 .book-details h3 {
-    font-size: 1.5rem;
-    margin: 0 0 10px;
+    font-size: 2rem;
+
     color: #333;
 }
 
-/* 作者、评分和描述样式 */
+
 .book-details p {
-    
+
     color: #555;
     line-height: 1.4;
 }
@@ -93,9 +92,8 @@ html, body {
     color: #777;
 }
 
-/* 没有找到结果的样式 */
+
 #searchResults p {
-    text-align: center;
     color: #999;
     font-size: 1.2rem;
 }

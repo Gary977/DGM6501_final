@@ -14,7 +14,7 @@ function displayResults(results) {
                 <img src="${book.image}" alt="${book.title}">
                 <div class="book-details">
                     <h3>${book.title}</h3>
-                    <p>by <span>${book.author}</span></p>
+                    <p>${book.author} <span>(${book.Year})</span></p>
                     <p class="rating">Rating: ${book.rating}</p>
                     <p class="description">${book.description}</p>
                 </div>
@@ -45,7 +45,7 @@ async function performSearch() {
         } else if (searchType === "author") {
             results = books.filter(book => book.author.toLowerCase().includes(query));
         }
-        
+
         displayResults(results);
     } catch (error) {
         console.error('Failed to load books:', error);

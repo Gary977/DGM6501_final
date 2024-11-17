@@ -3,7 +3,7 @@
     {
       "title": "Pride and Prejudice",
       "author": "Jane Austen",
-      "Year":"1813",
+      "year":"1813",
       "rating": "4.5",
       "image": "pictures/book1.jpg",
       "addedDate": "2024-11-01T08:30:00Z",
@@ -12,7 +12,7 @@
     {
       "title": "1984",
       "author": "George Orwell",
-      "Year":"1949",
+      "year":"1949",
       "rating": "4.8",
       "image": "pictures/book2.jpg",
       "addedDate": "2024-11-02T09:00:00Z",
@@ -21,16 +21,16 @@
     {
       "title": "To Kill a Mockingbird",
       "author": "Harper Lee",
-      "Year":"1960",
+      "year":"1960",
       "rating": "4.6",
       "image": "pictures/book3.jpg",
       "addedDate": "2024-11-03T10:15:00Z",
-      "description": "To Kill a Mockingbird is a novel by the American author Harper Lee. It was published in July 1960 and became instantly successful. In the United States, it is widely read in high schools and middle schools. To Kill a Mockingbird has become a classic of modern American literature; a year after its release, it won the Pulitzer Prize. The plot and characters are loosely based on Lee's observations of her family, her neighbors and an event that occurred near her hometown of Monroeville, Alabama, in 1936, when she was ten."
+      "description": "To Kill a Mockingbird is a novel by the American author Harper Lee. It was published in July 1960 and became instantly successful. In the United States, it is widely read in high schools and middle schools."
     },
     {
       "title": "The Great Gatsby",
       "author": "F. Scott Fitzgerald",
-      "Year":"1925",
+      "year":"1925",
       "rating": "4.4",
       "image": "pictures/book4.jpg",
       "addedDate": "2024-11-04T11:45:00Z",
@@ -39,55 +39,55 @@
     {
       "title": "Moby-Dick",
       "author": "Herman Melville",
-      "Year":"1851",
+      "year":"1851",
       "rating": "4.3",
       "image": "pictures/book5.jpg",
       "addedDate": "2024-11-05T12:30:00Z",
-      "description": "Moby-Dick; or, The Whale is an 1851 epic novel by American writer Herman Melville. The book is centered on the sailor Ishmael's narrative of the maniacal quest of Ahab, captain of the whaling ship Pequod, for vengeance against Moby Dick, the giant white sperm whale that bit off his leg on the ship's previous voyage. A contribution to the literature of the American Renaissance, Moby-Dick was published to mixed reviews, was a commercial failure, and was out of print at the time of the author's death in 1891."
+      "description": "Moby-Dick; or, The Whale is an 1851 epic novel by American writer Herman Melville. The book is centered on the sailor Ishmael's narrative of the maniacal quest of Ahab, captain of the whaling ship Pequod, for vengeance against Moby Dick, the giant white sperm whale that bit off his leg on the ship's previous voyage."
     },
     {
       "title": "The Odyssey",
       "author": "Homer",
-      "Year":"1614",
+      "year":"1614",
       "rating": "4.7",
       "image": "pictures/book6.jpg",
       "addedDate": "2024-11-06T13:00:00Z",
-      "description": "The Odyssey is one of two major ancient Greek epic poems attributed to Homer. It is one of the oldest works of literature still widely read by modern audiences. Like the Iliad, the Odyssey is divided into 24 books. It follows the Greek hero Odysseus, king of Ithaca, and his journey home after the Trojan War. After the war, which lasted ten years, his journey from Troy to Ithaca, via Africa and southern Europe, lasted for ten additional years during which time he encountered many perils and all of his crewmates were killed."
+      "description": "The Odyssey is one of two major ancient Greek epic poems attributed to Homer. It is one of the oldest works of literature still widely read by modern audiences. Like the Iliad, the Odyssey is divided into 24 books. It follows the Greek hero Odysseus, king of Ithaca, and his journey home after the Trojan War."
     },
     {
       "title": "War and Peace",
       "author": "Leo Tolstoy",
-      "Year":"1889",
+      "year":"1889",
       "rating": "4.8",
       "image": "pictures/book7.jpg",
       "addedDate": "2024-11-07T14:20:00Z",
-      "description": "War and Peace is a literary work by the Russian author Lev Tolstoy. Set during the Napoleonic Wars, the work comprises both a fictional narrative and chapters in which Tolstoy discusses history and philosophy. An early version was published serially beginning in 1865, after which the entire book was rewritten and published in 1869. It is regarded, with Anna Karenina, as Tolstoy's finest literary achievement, and it remains an internationally praised classic of world literature."
+      "description": "War and Peace is a literary work by the Russian author Lev Tolstoy. Set during the Napoleonic Wars, the work comprises both a fictional narrative and chapters in which Tolstoy discusses history and philosophy. An early version was published serially beginning in 1865, after which the entire book was rewritten and published in 1869."
     },
     {
       "title": "Crime and Punishment",
       "author": "Fyodor Dostoevsky",
-      "Year":"1866",
+      "year":"1866",
       "rating": "4.7",
       "image": "pictures/book8.jpg",
       "addedDate": "2024-11-08T15:00:00Z",
-      "description": "Crime and Punishment is a novel by the Russian author Fyodor Dostoevsky. It was first published in the literary journal The Russian Messenger in twelve monthly installments during 1866. It was later published in a single volume. It is the second of Dostoevsky's full-length novels following his return from ten years of exile in Siberia. Crime and Punishment is considered the first great novel of his mature period of writing and is often cited as one of the greatest works of world literature."
+      "description": "Crime and Punishment is a novel by the Russian author Fyodor Dostoevsky. It was first published in the literary journal The Russian Messenger in twelve monthly installments during 1866. It was later published in a single volume. It is the second of Dostoevsky's full-length novels following his return from ten years of exile in Siberia."
     },
     {
       "title": "The Catcher in the Rye",
       "author": "J.D. Salinger",
-      "Year":"1951",
+      "year":"1951",
       "rating": "4.2",
       "image": "pictures/book9.jpg",
       "addedDate": "2024-11-09T16:30:00Z",
-      "description": "The Catcher in the Rye is a novel by American author J. D. Salinger that was partially published in serial form in 1945–46 before being novelized in 1951. Originally intended for adults, it is often read by adolescents for its themes of angst and alienation, and as a critique of superficiality in society. The novel also deals with themes of innocence, identity, belonging, loss, connection, sex, and depression. The main character, Holden Caulfield, has become an icon for teenage rebellion. Caulfield, nearly of age, gives his opinion on a wide variety of topics as he narrates his recent life events."
+      "description": "The Catcher in the Rye is a novel by American author J. D. Salinger that was partially published in serial form in 1945–46 before being novelized in 1951. Originally intended for adults, it is often read by adolescents for its themes of angst and alienation, and as a critique of superficiality in society."
     },
     {
       "title": "The Brothers Karamazov",
       "author": "Fyodor Dostoevsky",
-      "Year":"1880",
+      "year":"1880",
       "rating": "4.6",
       "image": "pictures/book10.jpg",
       "addedDate": "2024-11-10T17:45:00Z",
-      "description": "The Brothers Karamazov (Russian: Бра́тья Карама́зовы, Brát'ya Karamázovy, pronounced [ˈbratʲjə kərɐˈmazəvɨ]), also translated as The Karamazov Brothers, is the last novel by Russian author Fyodor Dostoevsky. Dostoevsky spent nearly two years writing The Brothers Karamazov, which was published as a serial in The Russian Messenger from January 1879 to November 1880. Dostoevsky died less than four months after its publication. It has been acclaimed as one of the supreme achievements in world literature."
+      "description": "The Brothers Karamazov, also translated as The Karamazov Brothers, is the last novel by Russian author Fyodor Dostoevsky. Dostoevsky spent nearly two years writing The Brothers Karamazov, which was published as a serial in The Russian Messenger from January 1879 to November 1880. Dostoevsky died less than four months after its publication."
     }
   ]
