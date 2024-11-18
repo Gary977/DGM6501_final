@@ -12,7 +12,7 @@ async function loadHeaderAndFooter() {
         document.getElementById('header-container').innerHTML = headerData;
 
 
-        const footerResponse = await fetch('https://raw.githubusercontent.com/gary977/DGM6501_final/main/footer.html');
+        const footerResponse = await fetch('footer.html');
         const footerData = await footerResponse.text();
         document.getElementById('footer-container').innerHTML = footerData;
 

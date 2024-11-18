@@ -12,15 +12,17 @@ const modalBookTitle = document.getElementById('modalBookTitle');
 const modalBookAuthor = document.getElementById('modalBookAuthor');
 const modalBookRating = document.getElementById('modalBookRating');
 const modalBookDescription = document.getElementById('modalBookDescription');
+const detail = document.getElementById('detailsButton')
 const closeButton = document.querySelector('.close-button');
+
 let bookItemRect = null;
 
 initialize();
 
-
+// https://raw.githubusercontent.com/gary977/DGM6501_final/main/json/books.json
 async function initialize() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/gary977/DGM6501_final/main/json/books.json');
+        const response = await fetch('../json/books.json');
         if (!response.ok) throw new Error('Network response was not ok');
 
         books = await response.json();
@@ -104,16 +106,14 @@ function displayBooks(books) {
         bookItem.style.backgroundImage = `url(${book.image})`;
         bookItem.style.backgroundSize = "cover";
         bookItem.style.backgroundPosition = "center";
-        bookItem.innerHTML = `
-        
-
-        `;
+        bookItem.innerHTML = ``;
         bookItem.addEventListener('click', function () {
             modalBookCover.src = book.image;
             modalBookTitle.textContent = book.title;
             modalBookAuthor.textContent = `By ${book.author}`;
             modalBookRating.textContent = `Rating: ${book.rating}`;
             modalBookDescription.textContent = book.description;
+            detail.href=`detail.html?id= ${book.id}`;
             renderStars(modalBookRating, book.rating);
 
             bookItemRect = bookItem.getBoundingClientRect();

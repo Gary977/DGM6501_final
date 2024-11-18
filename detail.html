@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Detail</title>
+    <link rel="stylesheet" href="css/detail.css">
+    <script src="javascript/loadHeaderFooter.js" defer></script>
+</head>
+
+<body>
+
+<div class="book-detail-container">
+    <a href="index.html" class="back-button">← Back to Home</a>
+    <div class="book-detail">
+        <img id="book-cover" src="" alt="Book Cover" class="book-cover">
+        <div class="book-info">
+            <h1 id="book-title" class="book-title"></h1>
+            <h2 id="book-author" class="book-author"></h2>
+            <p id="book-rating" class="book-rating"></p>
+            <p id="book-description" class="book-description"></p>
+            <p id="book-added-date" class="book-added-date"></p>
+            <button class="exchange-button">Request Exchange</button>
+        </div>
+    </div>
+    <div class="comments-section">
+        <h3>Comments</h3>
+        <div class="comment-form">
+            <textarea id="comment-input" placeholder="Write your comment here..."></textarea>
+            <button id="submit-comment">Submit</button>
+        </div>
+        <div class="comments-list" id="comments-list">
+            <!-- 动态加载评论 -->
+        </div>
+    </div>
+</div>
+
+<div id="footer-container"></div>
+<script src="javascript/detail.js"></script> <!-- 引入搜索功能脚本 -->
+</body>
+</html>
