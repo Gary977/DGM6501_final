@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         // 如果没有找到书籍
         const container = document.querySelector(".book-detail-container");
-        container.innerHTML = "<p>Book not found.</p>";
+        // container.innerHTML = "<p>Book not found.</p>";
     }
 
     // 评论功能
