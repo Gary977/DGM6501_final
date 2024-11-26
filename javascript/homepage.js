@@ -22,7 +22,7 @@ initialize();
 // https://raw.githubusercontent.com/gary977/DGM6501_final/main/json/books.json
 async function initialize() {
     try {
-        const response = await fetch('../json/books.json');
+        const response = await fetch('https://raw.githubusercontent.com/gary977/DGM6501_final/main/json/books.json');
         if (!response.ok) throw new Error('Network response was not ok');
 
         books = await response.json();
@@ -208,27 +208,29 @@ function updateBooksPerPage() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const exchangeData1Y = [150, 200, 180, 220, 250];
-    const exchangeData6M = [100, 150, 200, 180, 220];
-    const exchangeData3M = [80, 130, 150, 140, 200];
+    const exchangeData1Y = [15, 20, 18, 22, 25, 30, 25, 27, 28, 29, 31, 32]; 
+    const exchangeData6M = [20, 18, 22, 25, 27, 30]; 
+    const exchangeData3M = [25, 27, 30]; 
+
     let currentChart;
 
-    function initializeChart(data) {
+
+    function initializeChart(data, labels) {
         const ctx = document.getElementById("exchangeChart").getContext("2d");
         if (currentChart) {
-            currentChart.destroy(); 
+            currentChart.destroy();
         }
         currentChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+                labels: labels, 
                 datasets: [{
                     label: "Book Exchanges",
                     data: data,
-                    borderColor: "#4a4a4a", 
-                    backgroundColor: "rgba(74, 74, 74, 0.1)", 
+                    borderColor: "#FFD700", 
+                    backgroundColor: "rgba(255, 215, 0, 0.3)", 
                     fill: true,
                     tension: 0.3
                 }]
@@ -239,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 scales: {
                     x: {
                         grid: {
-                            color: "#d3d3d3" 
+                            color: "#d3d3d3"
                         },
                         ticks: {
                             color: "#4a4a4a"
@@ -247,45 +249,60 @@ document.addEventListener("DOMContentLoaded", function() {
                     },
                     y: {
                         grid: {
-                            color: "#d3d3d3" 
+                            color: "#d3d3d3"
                         },
                         ticks: {
-                            color: "#4a4a4a" 
+                            color: "#4a4a4a"
                         }
                     }
                 },
                 plugins: {
-                    legend: { display: false }
+                    legend: { display: true }
                 }
             }
         });
     }
 
-    initializeChart(exchangeData1Y);
+
+    function getLastMonths(count) {
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const currentMonth = new Date().getMonth();
+        const labels = [];
+        for (let i = 0; i < count; i++) {
+            labels.push(months[(currentMonth - count + i + 1 + 12) % 12]); 
+        }
+        return labels;
+    }
+
+
+    initializeChart(exchangeData1Y, getLastMonths(12));
 
     document.querySelectorAll('.switch-btn').forEach((button, index) => {
         button.addEventListener('click', () => {
             document.querySelectorAll('.switch-btn').forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            if (index === 0) initializeChart(exchangeData1Y); // 1Y
-            if (index === 1) initializeChart(exchangeData6M); // 6M
-            if (index === 2) initializeChart(exchangeData3M); // 3M
+
+            if (index === 0) initializeChart(exchangeData1Y, getLastMonths(12)); // 1Y
+            if (index === 1) initializeChart(exchangeData6M, getLastMonths(6)); // 6M
+            if (index === 2) initializeChart(exchangeData3M, getLastMonths(3)); // 3M
         });
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const userData = [300, 400, 500, 600, 750];
+
+document.addEventListener("DOMContentLoaded", function () {
+    const bookExchangeData = [300, 400, 500, 600, 750]; 
+    const carbonReductionData = bookExchangeData.map(exchange => exchange * 2.5); 
 
     new Chart(document.getElementById("userChart"), {
         type: 'bar',
         data: {
-            labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+            labels: ["Jan", "Feb", "Mar", "Apr", "May"], 
             datasets: [{
-                label: "Users",
-                data: userData,
-                backgroundColor: "#8e8e8e",
+                label: "CO₂ Reduced (kg)", 
+                data: carbonReductionData, 
+                backgroundColor: "#4caf50", 
                 borderRadius: 4
             }]
         },
@@ -302,6 +319,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 },
                 y: {
+                    beginAtZero: true, 
                     grid: {
                         color: "#d3d3d3" 
                     },
@@ -311,9 +329,27 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             },
             plugins: {
-                legend: { display: false }
+                legend: { display: true } 
             }
         }
     });
+});
 
+document.addEventListener("DOMContentLoaded", function () {
+    const steps = document.querySelectorAll(".timeline-step");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                } else {
+                    entry.target.classList.remove("active");
+                }
+            });
+        },
+        { threshold: 0.8 } 
+    );
+
+    steps.forEach((step) => observer.observe(step));
 });

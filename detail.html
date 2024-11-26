@@ -19,26 +19,34 @@
             <div class="book-info">
                 <h1 id="book-title" class="book-title"></h1>
                 <h2 id="book-author" class="book-author"></h2>
-                <p id="book-rating" class="book-rating"></p>
+                <p id="book-rating" class="book-rating"></p> 
                 <p id="book-description" class="book-description"></p>
                 <p id="book-added-date" class="book-added-date"></p>
-                <button class="exchange-button">Request Exchange</button>
+                <a id="exchange" class="button-primary exchange-button" href="#" target="_blank">Request Exchange</a>
             </div>
+            
         </div>
         <div class="comments-section">
             <h3>Comments</h3>
             <div class="comment-form">
+
                 <textarea id="comment-input" placeholder="Write your comment here..."></textarea>
+                <div id="star-rating-container" class="star-rating">
+                    <span id="star-guide">Select your rating:</span>
+                    <div id="star-container"></div>
+                </div>
                 <button id="submit-comment">Submit</button>
             </div>
             <div class="comments-list" id="comments-list">
-                <!-- 动态加载评论 -->
+
             </div>
         </div>
+        
+        
     </div>
 
     <div id="footer-container"></div>
-    <script src="javascript/detail.js"></script> <!-- 引入搜索功能脚本 -->
+    <script src="javascript/detail.js"></script> 
 </body>
 
 </html>

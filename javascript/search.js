@@ -14,11 +14,14 @@ function displayResults(results) {
                 <img src="${book.image}" alt="${book.title}">
                 <div class="book-details">
                     <h3>${book.title}</h3>
-                    <p>${book.author} <span>(${book.Year})</span></p>
+                    <p>${book.author} <span>(${book.year})</span></p>
                     <p class="rating">Rating: ${book.rating}</p>
                     <p class="description">${book.description}</p>
                 </div>
             `;
+            bookElement.addEventListener("click", function () {
+                window.location.href = `detail.html?id=${book.id}`; // 跳转到详情页
+            });
             resultsContainer.appendChild(bookElement);
         });
     }

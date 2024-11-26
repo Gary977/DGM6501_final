@@ -88,10 +88,10 @@ html, body {
 
 body {
     height: 100vh;
-    overflow-y: auto; /* 允许内容区域滚动 */
+    overflow-y: auto; 
 
     font-size: 1.5rem;
-    background: #ffffff;
+    background: #f5f5f5;
 }
 
 .book-modal {
@@ -213,7 +213,7 @@ body {
     align-items: flex-end;
     justify-content: center;
     text-align: center;
-    background: #ffffff;
+    background: #f5f5f5;
 }
 
 .hero-image-container {
@@ -236,7 +236,7 @@ body {
     bottom: 0;
     width: 100%;
     height: 40%;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #f5f5f5 100%);
 }
 
 .hero-content {
@@ -259,6 +259,95 @@ body {
     margin-bottom: 2rem;
 }
 
+/* 时间轴整体样式 */
+.timeline-section {
+    background-color: #f5f5f5;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: #ccc;
+    z-index: 0;
+}
+
+.timeline-section h2{
+    margin-bottom: 5rem;
+}
+
+.timeline-step {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    width: 80%;
+    transform: scale(0.8); 
+    opacity: 0.5; 
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-step:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.timeline-step.active {
+    transform: scale(1.1); 
+    opacity: 1;
+}
+
+.timeline-image {
+    flex: 1;
+    text-align: center;
+}
+
+.timeline-image img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.timeline-step.active img {
+    transform: scale(1.2); 
+    filter: brightness(1.2);
+}
+
+.timeline-content {
+    flex: 1;
+    text-align: left;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: #666;
+}
 
 
 /* Main Content Section */
@@ -384,6 +473,7 @@ body {
 }
 
 
+
 .data-section {
     background-color: #e0e0e06e;
     border-radius: 1rem;
@@ -444,6 +534,12 @@ body {
 .stat-item h3 {
     font-size: 2.2rem;
     font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.stats-container h4 {
+    font-size: 1rem;
     color: #333;
     margin: 0;
 }
