@@ -39,7 +39,7 @@ function updateUserInfo() {
         userDashboard.classList.add('logged-in');
     } else {
         userName.textContent = "Log In";
-        userAvatar.src = "../pictures/default.png"; 
+        userAvatar.src = "pictures/default.png"; 
         userDashboard.classList.remove('logged-in');
     }
 }

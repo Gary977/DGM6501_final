@@ -10,7 +10,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Chakra Petch', Verdana, sans-serif;
-    overflow-y: hidden; /* 阻止页面纵向滚动 */
+
 
 }
 
@@ -87,8 +87,7 @@ html, body {
 }
 
 body {
-    height: 100vh;
-    overflow-y: auto; 
+
 
     font-size: 1.5rem;
     background: #f5f5f5;
@@ -205,59 +204,102 @@ body {
 
 
 
-.hero {
-    padding-top: 10%;
-    position: relative;
-    height: 40%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+
+.guide-section {
+    background-image:url(../pictures/hero.jpg);
+    background-size: cover;
+    padding: 4rem 2rem;
+    color: #fff;
     text-align: center;
-    background: #f5f5f5;
-}
-
-.hero-image-container {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 70%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     overflow: hidden;
-}
-
-.hero-image {
-    width: 100%;
-    height: 100%;
-    opacity: 75%;
-    object-fit: cover;
-}
-
-.hero-gradient {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 40%;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #f5f5f5 100%);
-}
-
-.hero-content {
     position: relative;
-    z-index: 1;
-    padding: 2rem;
 }
 
-.hero h1 {
-    font-weight: 700;
+.guide-section h2 {
     font-size: 2.5rem;
-    color: #000000;
+    font-weight: bold;
     margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.hero p {
-    font-weight: 400;
+.guide-section p {
     font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.9);
 }
+
+
+.guide-benefits {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.benefit {
+    width: 30%;
+    min-width: 20%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+
+.benefit:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
+}
+
+
+.icon-container {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, #fff, #ffd700);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-container i {
+    font-size: 2.5rem;
+    color: #202020;
+    transition: color 0.3s ease;
+}
+
+.benefit:hover .icon-container {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4);
+}
+
+.benefit:hover .icon-container i {
+    color: #fff;
+}
+
+/* 标题与描述 */
+.benefit h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.benefit p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
 
 /* 时间轴整体样式 */
 .timeline-section {
@@ -602,17 +644,28 @@ canvas {
     .book-item{
         flex: 0 0 calc((100% / 4) - 3rem);
     }
+
+
 }
 
 
 
 
+@media (max-width: 768px) {
+    .guide-benefits {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .benefit {
+        width: 80%; 
+        margin-bottom: 1.5rem;
+    }
+}
 
 
 @media (max-width:640px) {
-    html {
-        width: 640px;
-    }
+
 
     .book-item{
         flex: 0 0 calc((100% / 3) - 3rem);

@@ -5,7 +5,7 @@ const bookId = parseInt(urlParams.get("id"));
 document.addEventListener("DOMContentLoaded", async function () {
 
     try {
-        const response = await fetch('https://raw.githubusercontent.com/gary977/DGM6501_final/main/json/books.json');
+        const response = await fetch('json/books.json');
         if (!response.ok) throw new Error('Network response was not ok');
         books = await response.json();
     } catch (error) {

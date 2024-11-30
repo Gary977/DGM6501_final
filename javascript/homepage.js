@@ -209,13 +209,29 @@ function updateBooksPerPage() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-
-    const exchangeData1Y = [15, 20, 18, 22, 25, 30, 25, 27, 28, 29, 31, 32]; 
-    const exchangeData6M = [20, 18, 22, 25, 27, 30]; 
-    const exchangeData3M = [25, 27, 30]; 
-
+    // 定义每年的数据
+    const moneySavingData = {
+        2022: [250, 260, 240, 290, 300, 310, 280, 260, 270, 320, 300, 330],
+        2023: [320, 340, 300, 310, 380, 360, 350, 400, 370, 390, 420, 390],
+        2024: [400, 380, 410, 470, 450, 430, 440, 410, 420, 460, 450, 420]
+    };
     let currentChart;
+    const currentYear = 2022;
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]; 
+    updateStats(currentYear);
+    initializeChart(moneySavingData[2024], months);
 
+
+    document.querySelectorAll('.switch-btn').forEach((button, index) => {
+        button.addEventListener('click', () => {
+            document.querySelectorAll('.switch-btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const year = [2022, 2023, 2024][index]; // 根据按钮切换年份
+            initializeChart(moneySavingData[year], months);
+            updateStats(year);
+        });
+    });
 
     function initializeChart(data, labels) {
         const ctx = document.getElementById("exchangeChart").getContext("2d");
@@ -227,10 +243,10 @@ document.addEventListener("DOMContentLoaded", function () {
             data: {
                 labels: labels, 
                 datasets: [{
-                    label: "Book Exchanges",
+                    label: "Money Saved ($)",
                     data: data,
                     borderColor: "#FFD700", 
-                    backgroundColor: "rgba(255, 215, 0, 0.3)", 
+                    backgroundColor: "rgba(255, 215, 0, 0.3)",
                     fill: true,
                     tension: 0.3
                 }]
@@ -241,10 +257,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 scales: {
                     x: {
                         grid: {
-                            color: "#d3d3d3"
+                            color: "#d3d3d3" 
                         },
                         ticks: {
-                            color: "#4a4a4a"
+                            color: "#4a4a4a" 
                         }
                     },
                     y: {
@@ -252,43 +268,30 @@ document.addEventListener("DOMContentLoaded", function () {
                             color: "#d3d3d3"
                         },
                         ticks: {
-                            color: "#4a4a4a"
+                            color: "#4a4a4a",
+                            callback: function (value) {
+                                return `$${value}`; 
+                            }
                         }
                     }
                 },
                 plugins: {
-                    legend: { display: true }
-                }
+                    legend: { display: true } 
             }
-        });
-    }
-
-
-    function getLastMonths(count) {
-        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-        const currentMonth = new Date().getMonth();
-        const labels = [];
-        for (let i = 0; i < count; i++) {
-            labels.push(months[(currentMonth - count + i + 1 + 12) % 12]); 
         }
-        return labels;
+        });
     }
 
 
-    initializeChart(exchangeData1Y, getLastMonths(12));
+    function updateStats(year) {
+        const totalMoneySaved = moneySavingData[year].reduce((acc, val) => acc + val, 0); 
+        const totalExchanges = Math.floor(totalMoneySaved /15) ;
 
-    document.querySelectorAll('.switch-btn').forEach((button, index) => {
-        button.addEventListener('click', () => {
-            document.querySelectorAll('.switch-btn').forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-
-            if (index === 0) initializeChart(exchangeData1Y, getLastMonths(12)); // 1Y
-            if (index === 1) initializeChart(exchangeData6M, getLastMonths(6)); // 6M
-            if (index === 2) initializeChart(exchangeData3M, getLastMonths(3)); // 3M
-        });
-    });
+        document.getElementById("total-money").textContent = `$${totalMoneySaved}`;
+        document.getElementById("total-exchanges").textContent = totalExchanges;
+    }
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -348,8 +351,33 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
         },
-        { threshold: 0.8 } 
+        { threshold: 0.5 } 
     );
 
     steps.forEach((step) => observer.observe(step));
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const steps = document.querySelectorAll(".step");
+
+    // 滚动动画
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transform = "scale(1)";
+                    entry.target.style.opacity = "1";
+                } else {
+                    entry.target.style.transform = "scale(0.8)";
+                    entry.target.style.opacity = "0.5";
+                }
+            });
+        },
+        { threshold: 0.2 }
+    );
+
+    steps.forEach((step) => {
+        step.style.transition = "transform 0.5s ease, opacity 0.5s ease";
+        observer.observe(step);
+    });
 });
