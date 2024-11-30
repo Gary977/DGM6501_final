@@ -22,7 +22,7 @@ initialize();
 // https://raw.githubusercontent.com/gary977/DGM6501_final/main/json/books.json
 async function initialize() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/gary977/DGM6501_final/main/json/books.json');
+        const response = await fetch('books.json');
         if (!response.ok) throw new Error('Network response was not ok');
 
         books = await response.json();
@@ -209,7 +209,7 @@ function updateBooksPerPage() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    // 定义每年的数据
+
     const moneySavingData = {
         2022: [250, 260, 240, 290, 300, 310, 280, 260, 270, 320, 300, 330],
         2023: [320, 340, 300, 310, 380, 360, 350, 400, 370, 390, 420, 390],
@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelectorAll('.switch-btn').forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            const year = [2022, 2023, 2024][index]; // 根据按钮切换年份
+            const year = [2022, 2023, 2024][index];
             initializeChart(moneySavingData[year], months);
             updateStats(year);
         });
@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const steps = document.querySelectorAll(".step");
 
-    // 滚动动画
+
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {

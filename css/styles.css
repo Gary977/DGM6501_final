@@ -287,7 +287,7 @@ body {
     color: #fff;
 }
 
-/* 标题与描述 */
+
 .benefit h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
@@ -301,7 +301,7 @@ body {
 }
 
 
-/* 时间轴整体样式 */
+
 .timeline-section {
     background-color: #f5f5f5;
     padding: 2rem 1rem;
@@ -647,7 +647,6 @@ canvas {
 
 
 }
-
 
 
 

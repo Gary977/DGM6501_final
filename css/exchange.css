@@ -27,9 +27,9 @@ html, body {
     width: 90%;
     margin: 2rem auto;
     padding: 1.5rem;
-    background-color: #fff; /* 背景颜色 */
-    border-radius: 12px; /* 圆角 */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 阴影层次 */
+    background-color: #fff; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
 }
 
 .back-button {
@@ -59,7 +59,7 @@ h1 {
     letter-spacing: 1px;
 }
 
-/* 进度条样式 */
+
 .progress-bar {
     display: flex;
     justify-content: space-between;
@@ -127,7 +127,6 @@ h1 {
 
 
 
-/* 交易规则部分 */
 .trade-conditions {
     background-color: #fff;
     padding: 1.5rem;
@@ -145,7 +144,7 @@ h1 {
     color: #333;
 }
 
-/* 聊天工具 */
+
 .chat-section {
     margin-top: 2rem;
     background-color: #f9f9f9;

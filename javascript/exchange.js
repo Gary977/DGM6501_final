@@ -5,7 +5,7 @@ const bookId = parseInt(urlParams.get("id"));
 document.addEventListener("DOMContentLoaded", async function () {
 
     try {
-        const response = await fetch('https://raw.githubusercontent.com/gary977/DGM6501_final/main/json/books.json');
+        const response = await fetch('json/books.json');
         if (!response.ok) throw new Error('Network response was not ok');
         books = await response.json();
     } catch (error) {
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     if (book) {
 
-        // 渲染书主的书籍信息
+
         const container = document.getElementById("exchange-page");
         const ownerBookHTML = `
         <div class="owner-book">
@@ -47,7 +47,7 @@ document.querySelector(".upload-form").addEventListener("submit", function (e) {
         return;
     }
 
-    // 创建 FileReader 来读取上传的图片
+
     const reader = new FileReader();
     reader.onload = function () {
         const userBookHTML = `
@@ -63,6 +63,6 @@ document.querySelector(".upload-form").addEventListener("submit", function (e) {
     };
     reader.readAsDataURL(image);
 
-    // 清空表单
+
     document.querySelector(".upload-form").reset();
 });

@@ -118,15 +118,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function saveComment(comment) {
-        // 获取现有评论
+
         const allComments = JSON.parse(localStorage.getItem("comments")) || {};
         const bookComments = allComments[bookId] || [];
 
-        // 添加新的评论到当前书籍的评论列表
+
         bookComments.push(comment);
         allComments[bookId] = bookComments;
 
-        // 保存到 LocalStorage
+
         localStorage.setItem("comments", JSON.stringify(allComments));
     }
 
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const allComments = JSON.parse(localStorage.getItem("comments")) || {};
         const bookComments = allComments[bookId] || [];
 
-        // 渲染当前书籍的评论
+
         bookComments.forEach(comment => addCommentToList(comment));
     }
 
@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function renderStars(container, rating) {
-    container.innerHTML = ''; // 清空容器内容
+    container.innerHTML = ''; 
 
     for (let i = 1; i <= 5; i++) {
         const star = document.createElement('div');

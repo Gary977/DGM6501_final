@@ -2,7 +2,7 @@ let books = [];
 
 function displayResults(results) {
     const resultsContainer = document.getElementById('searchResults');
-    resultsContainer.innerHTML = ''; // 清空之前的结果
+    resultsContainer.innerHTML = ''; 
 
     if (results.length === 0) {
         resultsContainer.innerHTML = '<p>No results found.</p>';
@@ -20,23 +20,23 @@ function displayResults(results) {
                 </div>
             `;
             bookElement.addEventListener("click", function () {
-                window.location.href = `detail.html?id=${book.id}`; // 跳转到详情页
+                window.location.href = `detail.html?id=${book.id}`; 
             });
             resultsContainer.appendChild(bookElement);
         });
     }
 }
 
-// 获取 URL 中的查询参数
+
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
 }
 
-// 执行搜索并显示结果
+
 async function performSearch() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/gary977/DGM6501_final/main/json/books.json');
+        const response = await fetch('json/books.json');
         if (!response.ok) throw new Error('Network response was not ok');
         books = await response.json();
         let results = [];

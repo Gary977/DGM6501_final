@@ -15,7 +15,7 @@ function loadUserData() {
     }
 }
 
-//
+
 function saveUserData() {
     const currentUser = localStorage.getItem('currentUser');
     if (!currentUser) return;

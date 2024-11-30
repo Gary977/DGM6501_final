@@ -1,6 +1,4 @@
-// loadHeaderFooter.js
-// 'https://raw.githubusercontent.com/gary977/DGM6501_final/main/header.html'
-// https://raw.githubusercontent.com/gary977/DGM6501_final/main/footer.html'
+
 async function loadHeaderAndFooter() {
 
     document.body.style.display = 'none';

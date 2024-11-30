@@ -113,7 +113,7 @@ input[type="date"]:focus, textarea:focus {
 .avatar{
     width: 40%;
 }
-/* 保存成功提示消息 */
+
 .save-message {
     display: none;
     color: #535353;
