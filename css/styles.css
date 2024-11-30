@@ -96,7 +96,7 @@ body {
 .book-modal {
     visibility: hidden;
     position: fixed;
-    z-index: 1000;
+    z-index: 1001;
     left: 0;
     top: 0;
     width: 100%;
@@ -141,6 +141,7 @@ body {
     border-left: 2px solid #a1a1a1; 
     color: #444;
     line-height: 1.6;
+    margin-bottom: 5rem;
 }
 
 #modalBookRating {
@@ -660,7 +661,24 @@ canvas {
         width: 80%; 
         margin-bottom: 1.5rem;
     }
-}
+
+    .book-modal-content {
+        flex-direction: column; /* 从横向切换为纵向布局 */
+        width: 90%; /* 减小宽度以适配小屏幕 */
+        padding: 1.5rem;
+    }
+
+    .book-details {
+        margin-right: 0; /* 去除右边距 */
+        margin-bottom: 1rem; /* 添加下边距 */
+    }
+
+    .book-description {
+        padding-left: 0; /* 去除左侧内边距 */
+        border-left: none; /* 去除左侧分隔线 */
+        text-align: center; /* 居中对齐文字 */
+    }
+
 
 
 @media (max-width:640px) {

@@ -22,7 +22,7 @@ initialize();
 // https://raw.githubusercontent.com/gary977/DGM6501_final/main/json/books.json
 async function initialize() {
     try {
-        const response = await fetch('books.json');
+        const response = await fetch('json/books.json');
         if (!response.ok) throw new Error('Network response was not ok');
 
         books = await response.json();
