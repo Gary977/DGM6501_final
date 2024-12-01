@@ -1,7 +1,7 @@
 let books = [];
 const urlParams = new URLSearchParams(window.location.search);
-const bookId = parseInt(urlParams.get("id")); 
-
+const bookId = parseInt(urlParams.get("id"));
+let book = null;
 document.addEventListener("DOMContentLoaded", async function () {
 
     try {
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.error('Failed to load books:', error);
     }
 
-    const book = books.find(b => b.id === bookId);
+    book = books.find(b => b.id === bookId);
 
     if (book) {
 
@@ -21,158 +21,73 @@ document.addEventListener("DOMContentLoaded", async function () {
         document.getElementById("book-author").textContent = `by ${book.author} (${book.year})`;
 
         const ratingContainer = document.getElementById("book-rating");
-        renderStars(ratingContainer, book.rating); 
+        renderStars(ratingContainer, book.rating);
         const numericRating = document.createElement('span');
         numericRating.textContent = ` ${book.rating}`;
         ratingContainer.appendChild(numericRating);
         document.getElementById("book-description").textContent = book.description;
         document.getElementById("book-added-date").textContent = `Added: ${new Date(book.addedDate).toLocaleDateString()}`;
         document.getElementById("exchange").href = `exchange.html?id=${book.id}`;
+        document.getElementById("average-price").textContent = book.averagePrice.toFixed(2);
+        document.getElementById("annotating-owners").textContent = book.annotatingOwnersCount;
+        document.getElementById("book-condition").textContent = book.condition;
+        document.getElementById("exchange-times").textContent = book.exchangeTimes;
+        const currentThoughts = document.getElementById("current-owner-thoughts");
+        currentThoughts.textContent = book.currentOwner.thoughts || "No thoughts available.";
+
+        document.getElementById("annotation-checkbox").checked = book.currentOwner.annotated;
+        document.getElementById("highlight-checkbox").checked = book.currentOwner.highlighted;
+
+
+        // Calculate total savings
+        const totalSavings = book.averagePrice * book.exchangeTimes;
+        document.getElementById("total-savings").textContent = totalSavings.toFixed(2);
+        const thoughtsList = document.getElementById("thoughts-list");
+
+        // Populate the thoughts list
+        book.ownerThoughts.forEach(entry => {
+            const listItem = document.createElement("li");
+            listItem.classList.add("thought-item");
+            const footer = document.createElement("div");
+            footer.classList.add("thought-footer");
+            const annotationInfo = document.createElement("span");
+            annotationInfo.classList.add("annotation");
+            annotationInfo.innerHTML = `
+            <span class="annotation">
+                <label><input type="checkbox" disabled ${entry.annotated ? "checked" : ""}> Annotated</label>
+                <label><input type="checkbox" disabled ${entry.highlighted ? "checked" : ""}> Highlighted</label>
+            </span>
+        `;
+            // Create container for stars
+            const ratingContainer = document.createElement("div");
+            ratingContainer.classList.add("rating-container");
+
+            // Render stars using the provided function
+            renderStars(ratingContainer, entry.rating);
+
+            // Add the thought and rating to the list item
+            listItem.innerHTML = `
+            <strong>${entry.owner}:</strong>
+            <p>${entry.thoughts}</p>
+        `;
+            footer.appendChild(annotationInfo);
+            footer.appendChild(ratingContainer);
+            listItem.appendChild(footer);
+
+            thoughtsList.appendChild(listItem);
+        });
     } else {
         const container = document.querySelector(".book-detail-container");
         container.innerHTML = "<p>Book not found.</p>";
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const commentInput = document.getElementById("comment-input");
-    const submitCommentButton = document.getElementById("submit-comment");
-    const commentsList = document.getElementById("comments-list");
-    const starRatingContainer = document.getElementById("star-rating-container");
-    const starContainer =document.getElementById("star-container");
-    const starGuide = document.getElementById("star-guide");
-    let selectedRating = 0;
 
-
-    const currentUser = getCurrentUser();
-
-
-    renderSavedComments();
-
-
-    renderStarSelector();
-
-    submitCommentButton.addEventListener("click", function () {
-        const commentText = commentInput.value.trim();
-
-        if (!selectedRating) {
-            alert("Please select a star rating!");
-            return;
-        }
-
-        if (!commentText) {
-            alert("Please enter a comment!");
-            return;
-        }
-
-        const comment = {
-            username: currentUser,
-            text: commentText,
-            rating: selectedRating,
-            time: new Date().toLocaleString()
-        };
-
-        saveComment(comment);
-        addCommentToList(comment);
-        commentInput.value = ""; 
-        selectedRating = 0; 
-        renderStarSelector(); 
-    });
-
-    function renderStarSelector() {
-        starRatingContainer.innerHTML = ""; 
-        starContainer.innerHTML = "";
-        starRatingContainer.appendChild(starGuide);
-
-        for (let i = 1; i <= 5; i++) {
-            const star = document.createElement("div");
-            star.classList.add("star", "empty"); 
-
-            if (i <= selectedRating) {
-                star.classList.remove("empty");
-                star.classList.add("full");
-            }
-
-            star.addEventListener("mouseover", () => updateStarDisplay(i));
-            star.addEventListener("mouseout", () => updateStarDisplay(selectedRating));
-            star.addEventListener("click", () => {
-                selectedRating = i;
-                updateStarDisplay(selectedRating);
-            });
-
-            starContainer.appendChild(star);
-            starRatingContainer.appendChild(starContainer);
-        }
-    }
-
-    function updateStarDisplay(rating) {
-        Array.from(starContainer.children).forEach((star, index) => {
-            if (index < rating) {
-                star.classList.remove("empty");
-                star.classList.add("full");
-            } else {
-                star.classList.remove("full");
-                star.classList.add("empty");
-            }
-        });
-    }
-
-    function saveComment(comment) {
-
-        const allComments = JSON.parse(localStorage.getItem("comments")) || {};
-        const bookComments = allComments[bookId] || [];
-
-
-        bookComments.push(comment);
-        allComments[bookId] = bookComments;
-
-
-        localStorage.setItem("comments", JSON.stringify(allComments));
-    }
-
-    function renderSavedComments() {
-        const allComments = JSON.parse(localStorage.getItem("comments")) || {};
-        const bookComments = allComments[bookId] || [];
-
-
-        bookComments.forEach(comment => addCommentToList(comment));
-    }
-
-    function addCommentToList(comment) {
-        const commentItem = document.createElement("div");
-        commentItem.classList.add("comment-item");
-        commentItem.innerHTML = `
-            <div class="comment-header">
-                <span class="comment-username">${comment.username}</span>
-                <span class="comment-time">${comment.time}</span>
-            </div>
-            <p>${comment.text}</p>
-            <div class="comment-rating">
-                <span>Rating:</span>
-                ${renderStarHTML(comment.rating)}
-            </div>
-        `;
-        commentsList.prepend(commentItem); 
-    }
-
-    function renderStarHTML(rating) {
-        let stars = "";
-        for (let i = 1; i <= 5; i++) {
-            stars += `<div class="star ${i <= rating ? "full" : "empty"}"></div>`;
-        }
-        return stars;
-    }
-
-    function getCurrentUser() {
-
-        return localStorage.getItem("currentUser") || "Visitor";
-    }
-});
 
 
 
 function renderStars(container, rating) {
-    container.innerHTML = ''; 
+    container.innerHTML = '';
 
     for (let i = 1; i <= 5; i++) {
         const star = document.createElement('div');

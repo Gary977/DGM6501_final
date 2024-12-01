@@ -1,103 +1,527 @@
-
- [
-    {
-      "id":1,
-      "title": "Pride and Prejudice",
-      "author": "Jane Austen",
-      "year":"1813",
-      "rating": "4.5",
-      "image": "pictures/book1.jpg",
-      "addedDate": "2024-11-01T08:30:00Z",
-      "description": "Pride and Prejudice is the second novel by English author Jane Austen, published in 1813. A novel of manners, it follows the character development of Elizabeth Bennet, the protagonist of the book, who learns about the repercussions of hasty judgments and comes to appreciate the difference between superficial goodness and actual goodness."
+[
+  {
+    "id": 1,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "year": "1813",
+    "rating": "4.5",
+    "image": "pictures/book1.jpg",
+    "addedDate": "2024-11-01T08:30:00Z",
+    "description": "Pride and Prejudice is the second novel by English author Jane Austen, published in 1813. A novel of manners, it follows the character development of Elizabeth Bennet, the protagonist of the book, who learns about the repercussions of hasty judgments and comes to appreciate the difference between superficial goodness and actual goodness.",
+    "averagePrice": 12.5,
+    "condition": "Good",
+    "exchangeTimes": 5,
+    "annotatingOwnersCount": 3,
+    "currentOwner": {
+      "thoughts": "This book inspired me to reflect on societal expectations, particularly in terms of relationships and class structures. I found the witty exchanges between Elizabeth and Darcy fascinating and engaging.",
+      "annotated": true,
+      "highlighted": false
     },
-    {
-      "id":2,
-      "title": "1984",
-      "author": "George Orwell",
-      "year":"1949",
-      "rating": "4.8",
-      "image": "pictures/book2.jpg",
-      "addedDate": "2024-11-02T09:00:00Z",
-      "description": "Nineteen Eighty-Four is a dystopian novel and cautionary tale by English writer Eric Arthur Blair, who wrote under the pen name George Orwell. It was published on 8 June 1949 by Secker & Warburg as Orwell's ninth and final book completed in his lifetime."
+    "ownerThoughts": [
+      {
+        "owner": "First Owner",
+        "thoughts": "A timeless classic that I enjoyed thoroughly.",
+        "rating": 5,
+        "annotated": true,
+        "highlighted": true
+      },
+      {
+        "owner": "Second Owner",
+        "thoughts": "Loved the character development and moral themes.",
+        "rating": 4.5,
+        "annotated": false,
+        "highlighted": true
+      },
+      {
+        "owner": "Third Owner",
+        "thoughts": "The witty dialogues made this a delightful read.",
+        "rating": 4,
+        "annotated": true,
+        "highlighted": false
+      },
+      {
+        "owner": "Fourth Owner",
+        "thoughts": "Interesting exploration of societal norms.",
+        "rating": 4.5,
+        "annotated": false,
+        "highlighted": false
+      },
+      {
+        "owner": "Fifth Owner",
+        "thoughts": "A great reminder to appreciate inner goodness.",
+        "rating": 5,
+        "annotated": true,
+        "highlighted": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "1984",
+    "author": "George Orwell",
+    "year": "1949",
+    "rating": "4.8",
+    "image": "pictures/book2.jpg",
+    "addedDate": "2024-11-02T09:00:00Z",
+    "description": "Nineteen Eighty-Four is a dystopian novel and cautionary tale by English writer Eric Arthur Blair, who wrote under the pen name George Orwell. It was published on 8 June 1949 by Secker & Warburg as Orwell's ninth and final book completed in his lifetime.",
+    "averagePrice": 10.0,
+    "condition": "Excellent",
+    "exchangeTimes": 8,
+    "annotatingOwnersCount": 6,
+    "currentOwner": {
+      "thoughts": "Reading this book was a chilling experience. Orwell's depiction of a totalitarian regime feels eerily relevant in today’s context, especially the themes of surveillance and propaganda.",
+      "annotated": true,
+      "highlighted": true
     },
-    {
-      "id":3,
-      "title": "To Kill a Mockingbird",
-      "author": "Harper Lee",
-      "year":"1960",
-      "rating": "4.6",
-      "image": "pictures/book3.jpg",
-      "addedDate": "2024-11-03T10:15:00Z",
-      "description": "To Kill a Mockingbird is a novel by the American author Harper Lee. It was published in July 1960 and became instantly successful. In the United States, it is widely read in high schools and middle schools."
+    "ownerThoughts": [
+      {
+        "owner": "First Owner",
+        "thoughts": "1984 opened my eyes to the dangers of absolute power and control. The vivid imagery and stark warnings are unforgettable.",
+        "rating": 5,
+        "annotated": true,
+        "highlighted": false
+      },
+      {
+        "owner": "Second Owner",
+        "thoughts": "This novel is a profound exploration of the loss of individuality under oppressive regimes. It left a lasting impression on me.",
+        "rating": 5,
+        "annotated": false,
+        "highlighted": true
+      },
+      {
+        "owner": "Third Owner",
+        "thoughts": "Orwell's vision of a dystopian future was both terrifying and enlightening. It prompted deep reflections on personal freedoms.",
+        "rating": 4.5,
+        "annotated": true,
+        "highlighted": true
+      },
+      {
+        "owner": "Fourth Owner",
+        "thoughts": "This book gave me a new appreciation for the importance of truth and resistance in the face of oppression.",
+        "rating": 5,
+        "annotated": true,
+        "highlighted": false
+      },
+      {
+        "owner": "Fifth Owner",
+        "thoughts": "The emotional weight of this story lingered with me long after finishing it. It’s a powerful reminder of the fragility of freedom.",
+        "rating": 4.5,
+        "annotated": false,
+        "highlighted": true
+      },
+      {
+        "owner": "Sixth Owner",
+        "thoughts": "1984 is a masterpiece of cautionary fiction that deeply resonated with me. Orwell's writing is chillingly prophetic.",
+        "rating": 5,
+        "annotated": true,
+        "highlighted": false
+      },
+      {
+        "owner": "Seventh Owner",
+        "thoughts": "The relevance of this book in modern times cannot be overstated. It’s a must-read for anyone who values liberty.",
+        "rating": 4.8,
+        "annotated": false,
+        "highlighted": true
+      },
+      {
+        "owner": "Eighth Owner",
+        "thoughts": "Thought-provoking and unforgettable, Orwell’s novel remains a compelling cautionary tale.",
+        "rating": 5,
+        "annotated": true,
+        "highlighted": true
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "year": "1960",
+    "rating": "4.6",
+    "image": "pictures/book3.jpg",
+    "addedDate": "2024-11-03T10:15:00Z",
+    "description": "To Kill a Mockingbird is a novel by the American author Harper Lee. It was published in July 1960 and became instantly successful. In the United States, it is widely read in high schools and middle schools.",
+    "averagePrice": 15.0,
+    "condition": "Very Good",
+    "exchangeTimes": 6,
+    "annotatingOwnersCount": 4,
+    "currentOwner": {
+      "thoughts": "This book inspired me to reflect deeply on issues of justice and equality. The narrative is so powerful that it feels timeless.",
+      "annotated": true,
+      "highlighted": true
     },
-    {
-      "id":4,
-      "title": "The Great Gatsby",
-      "author": "F. Scott Fitzgerald",
-      "year":"1925",
-      "rating": "4.4",
-      "image": "pictures/book4.jpg",
-      "addedDate": "2024-11-04T11:45:00Z",
-      "description": "The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, the novel depicts first-person narrator Nick Carraway's interactions with Jay Gatsby, the mysterious millionaire with an obsession to reunite with his former lover, Daisy Buchanan."
+    "ownerThoughts": [
+      {
+        "owner": "First Owner",
+        "thoughts": "A profound exploration of justice and morality. Scout's innocence was particularly touching, and the moral lessons were unforgettable.",
+        "rating": 5,
+        "annotated": true,
+        "highlighted": true
+      },
+      {
+        "owner": "Second Owner",
+        "thoughts": "Harper Lee's ability to weave compelling characters into a complex societal narrative amazed me. Atticus Finch is a hero for all times.",
+        "rating": 4.8,
+        "annotated": true,
+        "highlighted": false
+      },
+      {
+        "owner": "Third Owner",
+        "thoughts": "The way this book tackles racism and empathy through a child's eyes is masterful. It prompted a lot of self-reflection.",
+        "rating": 4.5,
+        "annotated": false,
+        "highlighted": true
+      },
+      {
+        "owner": "Fourth Owner",
+        "thoughts": "A moving and emotional read. The courtroom scenes were incredibly intense, and the ending stayed with me for weeks.",
+        "rating": 5,
+        "annotated": true,
+        "highlighted": true
+      },
+      {
+        "owner": "Fifth Owner",
+        "thoughts": "Timeless and thought-provoking, this novel is a beacon of hope for justice and moral courage.",
+        "rating": 4.7,
+        "annotated": false,
+        "highlighted": false
+      },
+      {
+        "owner": "Sixth Owner",
+        "thoughts": "One of the most moving books I’ve ever read. The layered storytelling and moral questions linger long after reading.",
+        "rating": 5,
+        "annotated": true,
+        "highlighted": true
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "year": "1925",
+    "rating": "4.4",
+    "image": "pictures/book4.jpg",
+    "addedDate": "2024-11-04T11:45:00Z",
+    "description": "The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, the novel depicts first-person narrator Nick Carraway's interactions with Jay Gatsby, the mysterious millionaire with an obsession to reunite with his former lover, Daisy Buchanan.",
+    "averagePrice": 13.0,
+    "condition": "Good",
+    "exchangeTimes": 4,
+    "annotatingOwnersCount": 2,
+    "currentOwner": {
+      "thoughts": "This book transported me to the roaring twenties. Gatsby’s obsession and the tragic ending made me think deeply about the fragility of dreams.",
+      "annotated": true,
+      "highlighted": false
     },
-    {
-      "id":5,
-      "title": "Moby-Dick",
-      "author": "Herman Melville",
-      "year":"1851",
-      "rating": "4.3",
-      "image": "pictures/book5.jpg",
-      "addedDate": "2024-11-05T12:30:00Z",
-      "description": "Moby-Dick; or, The Whale is an 1851 epic novel by American writer Herman Melville. The book is centered on the sailor Ishmael's narrative of the maniacal quest of Ahab, captain of the whaling ship Pequod, for vengeance against Moby Dick, the giant white sperm whale that bit off his leg on the ship's previous voyage."
+    "ownerThoughts": [
+      {
+        "owner": "First Owner",
+        "thoughts": "A beautifully written tale of ambition, love, and loss. The descriptions of the Jazz Age are mesmerizing and vivid.",
+        "rating": 5,
+        "annotated": true,
+        "highlighted": true
+      },
+      {
+        "owner": "Second Owner",
+        "thoughts": "The Great Gatsby paints a poignant picture of the American Dream. The symbolism of the green light was particularly impactful for me.",
+        "rating": 4.5,
+        "annotated": false,
+        "highlighted": true
+      },
+      {
+        "owner": "Third Owner",
+        "thoughts": "A bittersweet journey through the lives of flawed and fascinating characters. Fitzgerald’s prose is unmatched.",
+        "rating": 4,
+        "annotated": true,
+        "highlighted": false
+      },
+      {
+        "owner": "Fourth Owner",
+        "thoughts": "This novel explores themes of wealth, love, and disillusionment with striking clarity. It left me feeling melancholic yet reflective.",
+        "rating": 4.8,
+        "annotated": false,
+        "highlighted": true
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "year": "1851",
+    "rating": "4.3",
+    "image": "pictures/book5.jpg",
+    "addedDate": "2024-11-05T12:30:00Z",
+    "description": "Moby-Dick; or, The Whale is an 1851 epic novel by American writer Herman Melville. The book is centered on the sailor Ishmael's narrative of the maniacal quest of Ahab, captain of the whaling ship Pequod, for vengeance against Moby Dick, the giant white sperm whale that bit off his leg on the ship's previous voyage.",
+    "averagePrice": 14.0,
+    "condition": "Acceptable",
+    "exchangeTimes": 3,
+    "annotatingOwnersCount": 2,
+    "currentOwner": {
+      "thoughts": "Melville’s exploration of obsession and the limits of human endurance struck a chord with me. The detailed descriptions of whaling were surprisingly engaging.",
+      "annotated": false,
+      "highlighted": true
     },
-    {
-      "id":6,
-      "title": "The Odyssey",
-      "author": "Homer",
-      "year":"1614",
-      "rating": "4.7",
-      "image": "pictures/book6.jpg",
-      "addedDate": "2024-11-06T13:00:00Z",
-      "description": "The Odyssey is one of two major ancient Greek epic poems attributed to Homer. It is one of the oldest works of literature still widely read by modern audiences. Like the Iliad, the Odyssey is divided into 24 books. It follows the Greek hero Odysseus, king of Ithaca, and his journey home after the Trojan War."
+    "ownerThoughts": [
+      {
+        "owner": "First Owner",
+        "thoughts": "A dense but rewarding read that delves deep into the complexities of the human condition. Captain Ahab’s quest is both tragic and captivating.",
+        "rating": 4.5,
+        "annotated": true,
+        "highlighted": true
+      },
+      {
+        "owner": "Second Owner",
+        "thoughts": "Melville’s mastery of narrative and detail shines through. The themes of obsession and revenge are powerfully portrayed.",
+        "rating": 4,
+        "annotated": true,
+        "highlighted": false
+      },
+      {
+        "owner": "Third Owner",
+        "thoughts": "This epic journey of man versus nature was fascinating. The philosophical undertones added depth to an already compelling story.",
+        "rating": 4.2,
+        "annotated": false,
+        "highlighted": true
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "The Odyssey",
+    "author": "Homer",
+    "year": "1614",
+    "rating": "4.7",
+    "image": "pictures/book6.jpg",
+    "addedDate": "2024-11-06T13:00:00Z",
+    "description": "The Odyssey is one of two major ancient Greek epic poems attributed to Homer. It is one of the oldest works of literature still widely read by modern audiences. Like the Iliad, the Odyssey is divided into 24 books. It follows the Greek hero Odysseus, king of Ithaca, and his journey home after the Trojan War.",
+    "averagePrice": 18.0,
+    "condition": "Good",
+    "exchangeTimes": 7,
+    "annotatingOwnersCount": 3,
+    "currentOwner": {
+      "thoughts": "As the current owner of The Odyssey, I find it deeply reflective of the human experience and resilience. Its timeless themes resonate with readers across centuries.",
+      "annotated": true,
+      "highlighted": false
     },
-    {
-      "id":7,
-      "title": "War and Peace",
-      "author": "Leo Tolstoy",
-      "year":"1889",
-      "rating": "4.8",
-      "image": "pictures/book7.jpg",
-      "addedDate": "2024-11-07T14:20:00Z",
-      "description": "War and Peace is a literary work by the Russian author Lev Tolstoy. Set during the Napoleonic Wars, the work comprises both a fictional narrative and chapters in which Tolstoy discusses history and philosophy. An early version was published serially beginning in 1865, after which the entire book was rewritten and published in 1869."
+    "ownerThoughts": [
+      {
+        "owner": "First Owner",
+        "thoughts": "An epic adventure that still resonates. The depth of storytelling is unparalleled.",
+        "rating": 5.0,
+        "annotated": true,
+        "highlighted": true
+      },
+      {
+        "owner": "Second Owner",
+        "thoughts": "A timeless story of resilience and hope. Odysseus' journey is a masterpiece of narrative.",
+        "rating": 4.8,
+        "annotated": false,
+        "highlighted": true
+      },
+      {
+        "owner": "Third Owner",
+        "thoughts": "The narrative is rich and engaging. It explores human struggles and victories.",
+        "rating": 4.7,
+        "annotated": true,
+        "highlighted": false
+      },
+      {
+        "owner": "Fourth Owner",
+        "thoughts": "Odysseus is a fascinating hero. The story's depth makes it a must-read.",
+        "rating": 5.0,
+        "annotated": true,
+        "highlighted": false
+      },
+      {
+        "owner": "Fifth Owner",
+        "thoughts": "The storytelling is unparalleled, with rich descriptions of heroism and adventure.",
+        "rating": 5.0,
+        "annotated": false,
+        "highlighted": true
+      },
+      {
+        "owner": "Sixth Owner",
+        "thoughts": "A literary masterpiece that never ages. The themes of perseverance are universally relatable.",
+        "rating": 4.9,
+        "annotated": true,
+        "highlighted": false
+      },
+      {
+        "owner": "Seventh Owner",
+        "thoughts": "Captivating from start to finish, The Odyssey remains a cornerstone of Western literature.",
+        "rating": 5.0,
+        "annotated": false,
+        "highlighted": true
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "War and Peace",
+    "author": "Leo Tolstoy",
+    "year": "1889",
+    "rating": "4.8",
+    "image": "pictures/book7.jpg",
+    "addedDate": "2024-11-07T14:20:00Z",
+    "description": "War and Peace is a literary work by the Russian author Lev Tolstoy. Set during the Napoleonic Wars, the work comprises both a fictional narrative and chapters in which Tolstoy discusses history and philosophy. An early version was published serially beginning in 1865, after which the entire book was rewritten and published in 1869.",
+    "averagePrice": 20.0,
+    "condition": "Excellent",
+    "exchangeTimes": 3,
+    "annotatingOwnersCount": 2,
+    "currentOwner": {
+      "thoughts": "War and Peace offers profound insights into human nature and history. As its current owner, I cherish its depth and timeless relevance.",
+      "annotated": true,
+      "highlighted": true
     },
-    {
-      "id":8,
-      "title": "Crime and Punishment",
-      "author": "Fyodor Dostoevsky",
-      "year":"1866",
-      "rating": "4.7",
-      "image": "pictures/book8.jpg",
-      "addedDate": "2024-11-08T15:00:00Z",
-      "description": "Crime and Punishment is a novel by the Russian author Fyodor Dostoevsky. It was first published in the literary journal The Russian Messenger in twelve monthly installments during 1866. It was later published in a single volume. It is the second of Dostoevsky's full-length novels following his return from ten years of exile in Siberia."
+    "ownerThoughts": [
+      {
+        "owner": "First Owner",
+        "thoughts": "A monumental achievement in literature. Its exploration of war and human relationships is unparalleled.",
+        "rating": 5.0,
+        "annotated": true,
+        "highlighted": true
+      },
+      {
+        "owner": "Second Owner",
+        "thoughts": "Tolstoy’s depth and detail are unmatched. The philosophical insights left me in awe.",
+        "rating": 4.9,
+        "annotated": true,
+        "highlighted": false
+      },
+      {
+        "owner": "Third Owner",
+        "thoughts": "A must-read for history and philosophy lovers. This book bridges narrative depth with historical analysis beautifully.",
+        "rating": 5.0,
+        "annotated": false,
+        "highlighted": true
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "year": "1866",
+    "rating": "4.7",
+    "image": "pictures/book8.jpg",
+    "addedDate": "2024-11-08T15:00:00Z",
+    "description": "Crime and Punishment is a novel by the Russian author Fyodor Dostoevsky. It was first published in the literary journal The Russian Messenger in twelve monthly installments during 1866. It was later published in a single volume. It is the second of Dostoevsky's full-length novels following his return from ten years of exile in Siberia.",
+    "averagePrice": 16.0,
+    "condition": "Good",
+    "exchangeTimes": 3,
+    "annotatingOwnersCount": 1,
+    "currentOwner": {
+      "thoughts": "As the current owner of Crime and Punishment, I find its exploration of guilt and redemption deeply impactful and emotionally profound.",
+      "annotated": false,
+      "highlighted": true
     },
-    {
-      "id":9,
-      "title": "The Catcher in the Rye",
-      "author": "J.D. Salinger",
-      "year":"1951",
-      "rating": "4.2",
-      "image": "pictures/book9.jpg",
-      "addedDate": "2024-11-09T16:30:00Z",
-      "description": "The Catcher in the Rye is a novel by American author J. D. Salinger that was partially published in serial form in 1945–46 before being novelized in 1951. Originally intended for adults, it is often read by adolescents for its themes of angst and alienation, and as a critique of superficiality in society."
+    "ownerThoughts": [
+      {
+        "owner": "First Owner",
+        "thoughts": "A profound exploration of guilt and redemption. Dostoevsky's characters are unforgettable and their struggles deeply resonate.",
+        "rating": 5.0,
+        "annotated": true,
+        "highlighted": true
+      },
+      {
+        "owner": "Second Owner",
+        "thoughts": "Dostoevsky's ability to delve into the human psyche is unparalleled. The moral dilemmas in this book are gripping and timeless.",
+        "rating": 4.7,
+        "annotated": false,
+        "highlighted": false
+      },
+      {
+        "owner": "Third Owner",
+        "thoughts": "A deep dive into the complexities of human nature. This book challenges the reader to think critically about justice and morality.",
+        "rating": 5.0,
+        "annotated": false,
+        "highlighted": true
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "year": "1951",
+    "rating": "4.2",
+    "image": "pictures/book9.jpg",
+    "addedDate": "2024-11-09T16:30:00Z",
+    "description": "The Catcher in the Rye is a novel by American author J. D. Salinger that was partially published in serial form in 1945–46 before being novelized in 1951. Originally intended for adults, it is often read by adolescents for its themes of angst and alienation, and as a critique of superficiality in society.",
+    "averagePrice": 11.0,
+    "condition": "Very Good",
+    "exchangeTimes": 3,
+    "annotatingOwnersCount": 1,
+    "currentOwner": {
+      "thoughts": "As the current owner of The Catcher in the Rye, I relate deeply to its exploration of teenage angst and alienation.",
+      "annotated": true,
+      "highlighted": false
     },
-    {
-      "id":10,
-      "title": "The Brothers Karamazov",
-      "author": "Fyodor Dostoevsky",
-      "year":"1880",
-      "rating": "4.6",
-      "image": "pictures/book10.jpg",
-      "addedDate": "2024-11-10T17:45:00Z",
-      "description": "The Brothers Karamazov, also translated as The Karamazov Brothers, is the last novel by Russian author Fyodor Dostoevsky. Dostoevsky spent nearly two years writing The Brothers Karamazov, which was published as a serial in The Russian Messenger from January 1879 to November 1880. Dostoevsky died less than four months after its publication."
-    }
-  ]
+    "ownerThoughts": [
+      {
+        "owner": "First Owner",
+        "thoughts": "A relatable tale of teenage angst. Holden’s struggles felt very personal and impactful.",
+        "rating": 4.2,
+        "annotated": true,
+        "highlighted": false
+      },
+      {
+        "owner": "Second Owner",
+        "thoughts": "The protagonist’s voice is unique and authentic. It felt like a window into the struggles of adolescence.",
+        "rating": 4.5,
+        "annotated": false,
+        "highlighted": true
+      },
+      {
+        "owner": "Third Owner",
+        "thoughts": "An insightful look into adolescence and the struggles of growing up. The book left me reflecting on my own teenage years.",
+        "rating": 4.3,
+        "annotated": false,
+        "highlighted": true
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "year": "1880",
+    "rating": "4.6",
+    "image": "pictures/book10.jpg",
+    "addedDate": "2024-11-10T17:45:00Z",
+    "description": "The Brothers Karamazov, also translated as The Karamazov Brothers, is the last novel by Russian author Fyodor Dostoevsky. Dostoevsky spent nearly two years writing The Brothers Karamazov, which was published as a serial in The Russian Messenger from January 1879 to November 1880. Dostoevsky died less than four months after its publication.",
+    "averagePrice": 19.0,
+    "condition": "Excellent",
+    "exchangeTimes": 3,
+    "annotatingOwnersCount": 2,
+    "currentOwner": {
+      "thoughts": "As the current owner of The Brothers Karamazov, I am struck by its deep philosophical exploration of faith and morality.",
+      "annotated": true,
+      "highlighted": true
+    },
+    "ownerThoughts": [
+      {
+        "owner": "First Owner",
+        "thoughts": "A deep philosophical exploration of faith and doubt. This book challenged my beliefs and left a lasting impact.",
+        "rating": 5.0,
+        "annotated": true,
+        "highlighted": true
+      },
+      {
+        "owner": "Second Owner",
+        "thoughts": "A multi-layered narrative with rich characters. The storytelling is profound and intellectually stimulating.",
+        "rating": 4.8,
+        "annotated": false,
+        "highlighted": true
+      },
+      {
+        "owner": "Third Owner",
+        "thoughts": "Unmatched in depth and storytelling. This book is a masterpiece of philosophical literature.",
+        "rating": 5.0,
+        "annotated": true,
+        "highlighted": false
+      }
+    ]
+  }
+]

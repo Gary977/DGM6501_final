@@ -67,7 +67,7 @@ body {
 }
 
 .book-cover {
-    width: 200px;
+    width: 20rem;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
@@ -111,6 +111,22 @@ body {
     margin-top: 0.5rem;
 }
 
+.additional-info {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    color: #333;
+}
+
+.additional-info p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+
 .button-primary{
     display: block;
     width: 100%;
@@ -141,45 +157,85 @@ body {
 }
 
 
-.comments-section {
+.owner-thoughts {
     margin-top: 2rem;
-    background: #f5f5f5; 
-    border-radius: 8px;
-    padding: 1rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.comments-section h3 {
-    margin-bottom: 1rem;
+.owner-thoughts h3 {
     font-size: 1.5rem;
     color: #333;
-}
-
-.comment-form {
-    display: flex;
-    gap: 1rem;
     margin-bottom: 1rem;
 }
 
-#comment-input {
-    flex: 1;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: none;
-    font-size: 1rem;
-    background: #fff; 
+#thoughts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#thoughts-list li {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#thoughts-list li strong {
+    font-weight: bold;
+    color: #444;
+}
+
+.thought-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.rating {
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+.current-owner-thoughts {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.current-owner-thoughts h3 {
+    font-size: 1.5rem;
     color: #333;
+    margin-bottom: 1rem;
 }
 
-#submit-comment {
-    width: 10%;
-    padding: 0.8rem 1.5rem;
-
+.current-owner-thoughts ul {
+    list-style: none;
+    padding: 0;
 }
 
-.comments-list {
-    border-top: 1px solid #ccc;
-    padding-top: 1rem;
+.current-owner-thoughts ul li {
+    margin-bottom: 0.5rem;
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+    transform: scale(1.2);
+    cursor: not-allowed; /* Indicate non-editable */
+}
+
+.owner-thoughts .annotation {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
 }
 
 

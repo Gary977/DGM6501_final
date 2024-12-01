@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             <img src="${book.image}" alt="Owner's Book Cover">
             <p><strong>Title:</strong> ${book.title}</p>
             <p><strong>Condition:</strong> ${book.condition}</p>
-            <p><strong>Notes:</strong> ${book.notes}</p>
+            <p><strong>Notes:</strong> ${book.currentOwner.thoughts}</p>
         </div>
     `;
         container.innerHTML = ownerBookHTML + container.innerHTML;
@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     } else {
         container.innerHTML = "<p>Book not found.</p>";
     }
+
+    document.getElementById("back-button").href = `detail.html?id=${book.id}`;
 });
 
 document.querySelector(".upload-form").addEventListener("submit", function (e) {
@@ -66,3 +68,5 @@ document.querySelector(".upload-form").addEventListener("submit", function (e) {
 
     document.querySelector(".upload-form").reset();
 });
+
+

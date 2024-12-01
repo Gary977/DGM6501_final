@@ -22,25 +22,35 @@
                 <p id="book-rating" class="book-rating"></p> 
                 <p id="book-description" class="book-description"></p>
                 <p id="book-added-date" class="book-added-date"></p>
+                <div class="additional-info">
+                    <p><strong>Average Price:</strong> $<span id="average-price">0</span></p>
+                    <p><strong>Condition:</strong> <span id="book-condition">N/A</span></p>
+                    <p><strong>Exchange Times:</strong> <span id="exchange-times">0</span></p>
+                    <p><strong>Owners with Annotations:</strong> <span id="annotating-owners">0</span></p>
+                    <p><strong>Total Savings:</strong> $<span id="total-savings">0</span></p>
+                </div>
                 <a id="exchange" class="button-primary exchange-button" href="#" target="_blank">Request Exchange</a>
             </div>
             
         </div>
-        <div class="comments-section">
-            <h3>Comments</h3>
-            <div class="comment-form">
-
-                <textarea id="comment-input" placeholder="Write your comment here..."></textarea>
-                <div id="star-rating-container" class="star-rating">
-                    <span id="star-guide">Select your rating:</span>
-                    <div id="star-container"></div>
-                </div>
-                <button id="submit-comment">Submit</button>
-            </div>
-            <div class="comments-list" id="comments-list">
-
-            </div>
+        <div class="current-owner-thoughts">
+            <h3>Current Owner's Thoughts</h3>
+            <p id="current-owner-thoughts">No thoughts available.</p>
+            <ul>
+                <li>
+                    <label><input type="checkbox" id="annotation-checkbox" disabled> Annotated</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" id="highlight-checkbox" disabled> Highlighted</label>
+                </li>
+            </ul>
         </div>
+        <div class="owner-thoughts">
+            <h3>Thoughts from Previous Owners</h3>
+            <ul id="thoughts-list">
+            </ul>
+        </div>
+        
         
         
     </div>

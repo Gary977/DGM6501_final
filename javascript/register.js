@@ -24,7 +24,7 @@ function registerUser(event) {
         password: password,
         birthdate:"",
         bio:"",
-        avatar:"../pictures/default.png"
+        avatar:"pictures/default.png"
     };
     
     localStorage.setItem(username, JSON.stringify(userData));
