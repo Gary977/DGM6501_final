@@ -10,7 +10,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Chakra Petch', Verdana, sans-serif;
-
+    font-size: 16px;
 
 }
 
@@ -679,11 +679,13 @@ canvas {
         text-align: center; /* 居中对齐文字 */
     }
 
-
+}
 
 @media (max-width:640px) {
 
-
+    html{
+        font-size: 10px;
+    }
     .book-item{
         flex: 0 0 calc((100% / 3) - 3rem);
     }

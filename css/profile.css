@@ -11,6 +11,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Chakra Petch', sans-serif;
+    font-size: 16px;
 }
 
 
@@ -121,4 +122,11 @@ input[type="date"]:focus, textarea:focus {
     text-align: center;
     margin-top: 1rem;
     font-weight: 500;
+}
+@media (max-width:640px) {
+
+    html{
+        font-size: 10px;
+    }
+
 }
