@@ -1,5 +1,11 @@
-<link rel="stylesheet" href="css/header.css">
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+    <link rel="stylesheet" href="css/header.css">
+</head>
 
 <header>
     <div class="logo">
@@ -7,20 +13,17 @@
     </div>
     <!-- Search Section within Header -->
     <div class="search-section">
-
-            <form action="search.html" class="search-container" method="GET">
-                <select name="searchType" id="search-type">
-                    <option value="title">Books</option>
-                    <option value="author">Author</option>
-                </select>
-                <input type="text" name="query" id="search-input" placeholder="Search for books..." />
-                <button type="submit" id="search-button">
-                    <img src="icons/search.svg" alt="Search">
-                </button>
-            </form>
-
+        <form action="search.html" class="search-container" method="GET">
+            <select name="searchType" id="search-type">
+                <option value="title">Books</option>
+                <option value="author">Author</option>
+            </select>
+            <input type="text" name="query" id="search-input" placeholder="Search for books...">
+            <button type="submit" id="search-button">
+                <img src="icons/search.svg" alt="Search">
+            </button>
+        </form>
     </div>
-    
 
     <nav class="primary-menu">
         <ul>
@@ -30,17 +33,16 @@
                 </a>
             </li>
             <li>
-                <a href="help.html">
+                <a href="#">
                     <img src="icons/help.png" alt="Profile Icon" class="icon">Help
                 </a>
-
             </li>
         </ul>
     </nav>
 
     <div id="userDashboard" class="user-dashboard">
         <div class="user-info">
-            <img src="" alt="User Avatar" id="userAvatar">
+            <img src="#" alt="User Avatar" id="userAvatar">
             <span id="userName">Username</span>
             <span class="dropdown-arrow">▼</span>
         </div>
@@ -52,12 +54,12 @@
                 </a>
             </li>
             <li>
-                <a href="onlist.html">
+                <a href="#">
                     <img src="icons/bookshelf.png" alt="Profile Icon" class="icon">My List
                 </a>
             </li>
             <li>
-                <a href="history.html">
+                <a href="#">
                     <img src="icons/history.png" alt="Profile Icon" class="icon">History
                 </a>
             </li>
